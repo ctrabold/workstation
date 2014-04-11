@@ -1,0 +1,27 @@
+---
+# 42  mkdir -p ~/.fonts.conf.d/
+# 43  ln -s .fontconfig/10-powerline-symbols.conf .fonts.conf.d/10-powerline-symbols.conf
+# 44  ls .fonts.conf.d/10-powerline-symbols.conf
+
+- name: Create fonts directory
+  file: path=/home/{{login_user}}/.fonts owner={{login_user}} group={{login_user}} mode=0644
+  file: path=/home/{{login_user}}/..fonts.conf.dw owner={{login_user}} group={{login_user}} mode=0644
+
+- name: Create .fontconfig directory
+  file: path=/home/{{login_user}}/.fontconfig owner={{login_user}} group={{login_user}} mode=0644
+# 0  wget raw file
+
+# 49  git clone https://github.com/Lokaltog/powerline-fonts.git
+# 50  cp powerline-fonts/Meslo/*.otf ~/.fonts/
+# 51  fc-cache -vf ~/.fonts
+
+# 1  ll ~/.fonts/
+# 2  mkdir -p ~/.fonts/
+# 3  fc-cache
+# 4  fc-cache -h
+# 5  fc-cache -v
+# 6  mkdir .fontconfig
+# 7  mv ~/Downloads/10-powerline-symbols.conf .fontconfig
+# 8  mv ~/Downloads/PowerlineSymbols.otf .fonts
+
+

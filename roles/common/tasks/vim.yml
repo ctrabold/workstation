@@ -1,0 +1,21 @@
+---
+- name: Install vim
+  sudo: True
+  apt: pkg=vim state=installed
+
+- name: Install janus
+  command: /usr/bin/curl -Lo- https://bit.ly/janus-bootstrap | bash creates=/home/{{login_user}}/.vim/Rakefile
+
+- name: Create plugin directory
+  file: path=/home/{{login_user}}/.janus owner={{login_user}} group={{login_user}} mode=0644
+
+- name: Pull in vim plugins
+  git: repo=https://github.com/ctrabold/dotfiles.git
+       dest=/home/{{login_user}}/bin
+  with_items:
+    - vim-scripts/Auto-Pairs
+    - vim-scripts/Align
+    - Lokaltog/vim-powerline
+    - rizzatti/funcoo.vim
+    - rizzatti/dash.vim
+

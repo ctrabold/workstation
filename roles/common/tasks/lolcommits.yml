@@ -1,0 +1,5 @@
+---
+- name: Install lolcommits requirements
+# 88  sudo apt-get install mplayer imagemagick libmagickwand-dev
+- name: Install lolcommits gem
+# 90  gem install lolcommits

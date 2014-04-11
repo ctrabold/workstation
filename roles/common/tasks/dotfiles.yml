@@ -5,3 +5,5 @@
 - name: Pull dotfiles from Github
   git: repo=https://github.com/ctrabold/dotfiles.git
        dest=/home/{{login_user}}/bin
+
+# TODO: Link config files
