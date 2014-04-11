@@ -5,4 +5,5 @@
 # Get operation system Ubuntu / Mac
 # install ansible from repo / brew?
 # Run ansible
-ansible-playbook -i ./hosts.ini -K playbook.yml
+echo "Let's go!"
+ansible-playbook -vvvv -i ./hosts.ini -K playbook.yml --extra-vars "login_user=$USER ansible_hostname=`hostname -f`"
