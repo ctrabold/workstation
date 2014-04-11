@@ -9,3 +9,10 @@ Because it's boring.
 I also use this repo to document my experience with Ansible.
 
 Because it's fun.
+
+
+# Important
+
+I use this repo to learn a new tool. Thus I consider the content unstable.
+
+Use at your own risk. Thanks!
