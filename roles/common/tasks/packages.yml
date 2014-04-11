@@ -3,8 +3,19 @@
   sudo: True
   apt: pkg={{item}} state=installed
   with_items:
+     - ack
+     - autojump
+     - build-essential
      - curl
+     - git
      - git-core
      - git-extras
-     - vim
+     - rbenv
+     - ruby
+     - ruby-build
+     - siege
+     - terminator
+     - tmux
      - tree
+     - vim
+     - zsh
