@@ -3,6 +3,11 @@
   sudo: True
   apt: pkg=zsh state=installed
 
+- name: Install oh-my-zsh
+  command: /usr/bin/curl -L http://install.ohmyz.sh | sh creates=/home/{{login_user}}/.oh-my-zsh
+
 - name: Change shell to ZSH
   sudo: True
   command: chsh -s /bin/zsh {{login_user}}
+
+# TODO: Link config files
