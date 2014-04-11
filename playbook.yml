@@ -1,0 +1,25 @@
+---
+- hosts: all
+#  user: root
+  roles:
+    - common
+#    - { role: common_mac_osx, tags: ['common', 'mac'], when: ansible_os_family == 'MacOSX' }
+#    - { role: common_ubuntu, tags: ['common', 'ubuntu'], when: ansible_os_family == 'Ubuntu' }
+
+  # vars_files:
+  #    - "vars/external_vars.yml"
+  #    - [ "vars/{{ ansible_os_family }}.yml", "vars/defaults.yml" ]
+
+  # tasks:
+
+  # - name: ensure apache is latest
+  #   action: "{{ packager }} pkg={{ apache }} state=latest"
+
+  # - name: ensure apache is running
+  #   action: service name={{ apache }} state=running
+
+  pre_tasks:
+      - local_action: shell echo "Starting setup on {{ ansible_hostname }}"
+
+  post_tasks:
+      - local_action: shell echo "Setup finished on {{ ansible_hostname }} for {{ login_user }}. Have a good time!"

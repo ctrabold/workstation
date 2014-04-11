@@ -1,0 +1,8 @@
+---
+- name: Install ZSH
+  sudo: True
+  apt: pkg=zsh state=installed
+
+- name: Change shell to ZSH
+  sudo: True
+  command: chsh -s /bin/zsh {{login_user}}
