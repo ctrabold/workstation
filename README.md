@@ -16,3 +16,17 @@ Because it's fun.
 I use this repo to learn a new tool. Thus I consider the content unstable.
 
 Use at your own risk. Thanks!
+
+
+# TODOs / ideas
+
+- Check if homebrew is outdated
+- Fix rubygems install issues
+
+
+# Kudos
+
+Inspired by
+
+- http://marvelley.com/blog/2014/04/11/local-provisioning-with-ansible/
+- http://whitewashing.de/2013/11/19/setting_up_development_machines_ansible_edition.html
