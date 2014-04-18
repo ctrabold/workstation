@@ -67,6 +67,8 @@
     caskroom_dir: /usr/local/caskroom
     dotfiles_dir: /Users/ctrabold/dotfiles
     email: info@christian-trabold.de
+    username: ctrabold
+    user_group: staff
     github_username: ctrabold
     home_dir: /Users/ctrabold
     name: Christian Trabold
@@ -80,6 +82,8 @@
       when: ansible_os_family == "Ubuntu"
 
     - include: tasks/zsh.yml tags=zsh
+    - include: tasks/ruby.yml tags=ruby
+    - include: tasks/vim.yml tags=vim
     - include: tasks/dotfiles.yml tags=dotfiles
 
   post_tasks:

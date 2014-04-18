@@ -1,10 +1,10 @@
 ---
-- name: Install ruby packages for compiling gems
-  sudo: True
-  apt: pkg={{item}} state=installed
-  with_items:
-     - openssl
-     - libssl-dev
+# - name: Install ruby packages for compiling gems
+#   sudo: True
+#   apt: pkg={{item}} state=installed
+#   with_items:
+#      - openssl
+#      - libssl-dev
 #     autoconf bison build-essential libssl-dev libyaml-dev libreadline6 libreadline6-dev zlib1g zlib1g-dev
 
 # 267  sudo apt-get install ruby1.8-dev ruby1.8 ri1.8 rdoc1.8 irb1.8
@@ -12,12 +12,29 @@
 # 269  sudo apt-get install libxslt-dev libxml2-dev
 
 - name: Install rbenv
-- name: Install ruby versions
-- name: Install gems
+  homebrew: name={{ item }} state=present
+  with_items:
+    - rbenv
+    - ruby-build
 
-# 33  rbenv install 1.9.3
-# 34  rbenv install 1.9.3-p545
-# 35  rbenv global
-# 36  rbenv versions
-# 37  rbenv global 2.1.0
-# gems: bundler, showoff, middleman
+- name: Install ruby versions
+  command: rbenv install --skip-existing {{ item }} state=present
+  with_items:
+    - 1.9.3-p545
+    - 2.0.0-p451
+    # - 2.1.0
+
+- name: Set global ruby versions
+  command: rbenv global 2.0.0-p451
+
+# Not working ATM
+# @see http://stackoverflow.com/questions/22115936/install-bundler-gem-using-ansible
+# @see http://mmoya.org/blog/2013/02/22/installing-rubyrbenv-with-ansible/
+#
+# - name: Install gems
+#   command: RBENV_ROOT={{ rbenv_root }} bash -lc "gem install {{ item }}"
+# #  when: bash -lc "gem list " | grep ^{{ item }}$ -v
+#   with_items:
+#     - bundler
+#     - showoff
+#     - middleman
