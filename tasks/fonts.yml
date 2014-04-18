@@ -1,27 +1,24 @@
 ---
-# 42  mkdir -p ~/.fonts.conf.d/
-# 43  ln -s .fontconfig/10-powerline-symbols.conf .fonts.conf.d/10-powerline-symbols.conf
-# 44  ls .fonts.conf.d/10-powerline-symbols.conf
+- name: Check caskroom-fonts is installed
+  command: brew tap | grep caskroom/fonts
+  register: brew_cask_fonts_installed
+  ignore_errors: true
 
-- name: Create fonts directory
-  file: path=/home/{{login_user}}/.fonts owner={{login_user}} group={{login_user}} mode=0644
-  file: path=/home/{{login_user}}/..fonts.conf.dw owner={{login_user}} group={{login_user}} mode=0644
+  # @see https://github.com/caskroom/homebrew-fonts
+- name: Install caskroom-fonts
+  shell: brew tap caskroom/fonts
+  when: brew_cask_fonts_installed|failed
 
-- name: Create .fontconfig directory
-  file: path=/home/{{login_user}}/.fontconfig owner={{login_user}} group={{login_user}} mode=0644
-# 0  wget raw file
+- name: Install fonts
+  command: brew cask install  {{ item }}
+  with_items:
+    - font-inconsolata-dz-for-powerline
+    - font-inconsolata
+    - font-ubuntu
 
-# 49  git clone https://github.com/Lokaltog/powerline-fonts.git
-# 50  cp powerline-fonts/Meslo/*.otf ~/.fonts/
-# 51  fc-cache -vf ~/.fonts
+#
+# Different routine for Ubuntu:
+#
 
-# 1  ll ~/.fonts/
-# 2  mkdir -p ~/.fonts/
-# 3  fc-cache
-# 4  fc-cache -h
-# 5  fc-cache -v
-# 6  mkdir .fontconfig
-# 7  mv ~/Downloads/10-powerline-symbols.conf .fontconfig
-# 8  mv ~/Downloads/PowerlineSymbols.otf .fonts
-
-
+- include: fonts_ubuntu.yml
+  when: ansible_os_family == "Ubuntu"
