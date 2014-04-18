@@ -1,0 +1,6 @@
+---
+- name: Install linux headers
+  sudo: True
+  apt: pkg={{item}} state=installed
+  with_items:
+    - linux-image-extra-`uname -r`
