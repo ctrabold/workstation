@@ -1,12 +1,86 @@
 ---
 - hosts: all
-  roles:
-   - common
-#    - { role: common_mac_osx, tags: ['common', 'mac'], when: ansible_os_family == 'MacOSX' }
-#    - { role: common_ubuntu, tags: ['common', 'ubuntu'], when: ansible_os_family == 'Ubuntu' }
 
-  pre_tasks:
-      - shell: echo "Starting setup on {{ ansible_hostname }}"
+  vars:
+    applications:
+      # - alfred
+      # - cord
+      # - firefox
+      # - google-chrome
+      # - gpgtools
+      # - handbrake
+      # - kdiff3
+      # - libreoffice
+      # - mou
+      # - sequel-pro
+      # - the-unarchiver
+      # - tunnelblick
+      #- vagrant
+      - flux
+      # - virtualbox
+    application_dir: /Applications
+    brews:
+      - ack
+#      - chromedriver
+      - docker
+#      - hub
+#      - ios-webkit-debug-proxy
+      - rsync
+      - zsh
+#     - autojump
+#     - cclive
+#     - ffmpeg
+#     - git-extras
+#     - graphviz
+#     # @see https://gist.github.com/jimbojsb/1630790
+#     - highlight
+#     - htop
+#     - imagemagick
+#     - jenkins-lts
+#     - parallel
+#     - pwgen
+#     - rbenv
+#     - ruby-install
+#     - tig
+#     - tmux
+#     - tree
+#     - vim
+#     - wget
+    apt_packages:
+       - ack
+       - autojump
+       - build-essential
+       - curl
+       - git
+       - git-core
+       - git-extras
+       - htop
+       - rbenv
+       - ruby
+       - ruby-build
+       - siege
+       - terminator
+       - tmux
+       - tree
+       - vim
+       - zsh
+    caskroom_dir: /usr/local/caskroom
+    dotfiles_dir: /Users/ctrabold/dotfiles
+    email: info@christian-trabold.de
+    github_username: ctrabold
+    home_dir: /Users/ctrabold
+    name: Christian Trabold
+    zsh_path: /usr/local/bin/zsh
+
+  tasks:
+    - include: tasks/homebrew.yml tags=homebrew
+      when: ansible_os_family == "Darwin"
+
+    - include: tasks/packages_apt.yml tags=apt
+      when: ansible_os_family == "Ubuntu"
+
+    - include: tasks/zsh.yml tags=zsh
+    - include: tasks/dotfiles.yml tags=dotfiles
 
   post_tasks:
-      - shell: echo "Setup finished on {{ ansible_hostname }} running for {{ login_user }}. Have a good time!"
+      - shell: echo "Setup finished on {{ ansible_hostname }} running for {{ ansible_user_id }}. Have a good time!"

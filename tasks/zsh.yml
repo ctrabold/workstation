@@ -4,10 +4,12 @@
   register: current_shell
 
 - name: Enable zsh in /etc/shells
-  shell: sudo /bin/sh -c 'grep -q "{{ zsh_path }}" /etc/shells || echo "{{ zsh_path }}" >> /etc/shells'
+  sudo: true
+  shell: /bin/sh -c 'grep -q "{{ zsh_path }}" /etc/shells || echo "{{ zsh_path }}" >> /etc/shells'
   when: current_shell.stdout != '/usr/local/bin/zsh'
 
 - name: Set zsh as default shell
+  sudo: true
   shell: chsh -s {{ zsh_path }}
   when: current_shell.stdout != '/usr/local/bin/zsh'
 
