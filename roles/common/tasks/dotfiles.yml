@@ -1,9 +1,0 @@
----
-- name: Create dotfile directory
-  file: path=/home/{{login_user}}/bin owner={{login_user}} group={{login_user}} mode=0644
-
-- name: Pull dotfiles from Github
-  git: repo=https://github.com/ctrabold/dotfiles.git
-       dest=/home/{{login_user}}/bin
-
-# TODO: Link config files

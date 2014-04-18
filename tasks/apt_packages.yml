@@ -1,0 +1,5 @@
+---
+- name: Install utilities
+  sudo: True
+  apt: pkg={{item}} state=installed
+  with_items: apt_packages

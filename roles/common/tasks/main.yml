@@ -1,7 +1,0 @@
----
-- { include: packages.yml, tags: ['packages', 'cli'] }
-- { include: zsh.yml,      tags: ['zsh', 'cli'] }
-- { include: fonts.yml,    tags: ['cli'] }
-- { include: dotfiles.yml, tags: ['cli'] }
-- { include: ruby.yml,     tags: ['packages', 'cli'] }
-- { include: vim.yml,      tags: ['packages', 'cli'] }
