@@ -1,20 +1,23 @@
 ---
-- name: Install vim
-  sudo: True
-  apt: pkg=vim state=installed
+# - name: Install vim
+#   sudo: True
+#   apt: pkg=vim state=installed
 
+  # @see https://github.com/carlhuda/janus#customization for details
 - name: Install janus
-  command: /usr/bin/curl -Lo- https://bit.ly/janus-bootstrap | bash creates=/home/{{ login_user }}/.vim/Rakefile
+  command: /usr/bin/curl -Lo- https://bit.ly/janus-bootstrap | bash creates={{ home_dir }}/.vim/Rakefile
 
-- name: Create plugin directory
-  file: path=/home/{{ login_user }}/.janus owner={{ login_user }} group={{ login_user }} mode=0644
+- name: Create folder for janus plugins
+  file: path={{ home_dir }}/.janus owner={{ username }} group={{ user_group }} mode=0755
 
 - name: Pull in vim plugins
-  git: repo=git://github.com/{{ item }}.git
-       dest=/home/{{ login_user }}/.janus
+  git: repo=git://github.com/{{ item.name }}/{{ item.repo }}.git
+       dest={{ home_dir }}/.janus/{{ item.repo }}
+       update=yes
   with_items:
-    - vim-scripts/Auto-Pairs
-    - vim-scripts/Align
-    - Lokaltog/vim-powerline
-    - rizzatti/funcoo.vim
-    - rizzatti/dash.vim
+    - { name: 'vim-scripts', repo: 'Auto-Pairs' }
+    - { name: 'vim-scripts', repo: 'Align' }
+    - { name: 'Lokaltog', repo: 'vim-powerline' }
+    - { name: 'Lokaltog', repo: 'vim-powerline' }
+    - { name: 'rizzatti', repo: 'funcoo.vim' }
+    - { name: 'rizzatti', repo: 'dash.vim' }
