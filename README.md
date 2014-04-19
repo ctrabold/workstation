@@ -30,3 +30,17 @@ Inspired by
 
 - http://marvelley.com/blog/2014/04/11/local-provisioning-with-ansible/
 - http://whitewashing.de/2013/11/19/setting_up_development_machines_ansible_edition.html
+
+
+---
+
+# Installed Software
+
+<pre>
+iShowU_1.92.3.dmg
+Slowyapp_v1.2.dmg
+onthejob_3.0.6.zip
+ChimooTimer.dmg
+solarized.zip
+yslow-phantomjs-3.1.1.zip
+</pre>

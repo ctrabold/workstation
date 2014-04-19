@@ -3,20 +3,44 @@
 
   vars:
     applications:
+      # TODO ct 2014-04-19 How to handle App-Store Apps?
+      # - adium
       # - alfred
+      # - appcleaner
+      # - atmonitor
+      # - ccmenu
+      # - charles
       # - cord
+      # - dropbox
       # - firefox
+      # - flux
+      # - freemind
+      # - gephi
+      # - github
       # - google-chrome
+      # - google-drive
+      # - google-hangouts
+      # - google-refine
       # - gpgtools
       # - handbrake
+      # - imageoptim
+      # - iterm2
+      # - kaleidoscope
       # - kdiff3
+      # - keepassx
       # - libreoffice
       # - mou
+      # - nvalt
+      # - onepassword
+      # - owasp-zap
+      # - pandoc
       # - sequel-pro
+      # - sublime-text
+      # - teamviewer
       # - the-unarchiver
       # - tunnelblick
-      #- vagrant
-      - flux
+      # - typinator
+      # - vagrant
       # - virtualbox
     application_dir: /Applications
     brews:
@@ -38,10 +62,12 @@
 #     - imagemagick
 #     - jenkins-lts
 #     - parallel
+#      - phantomjs
 #     - pwgen
 #     - rbenv
       - rbenv-gem-rehash
 #     - ruby-install
+#      - tesseract
 #     - tig
 #     - tmux
 #     - tree
