@@ -14,7 +14,7 @@
   when: current_shell.stdout != '/usr/local/bin/zsh'
 
 - name: Check oh-my-zsh is installed
-  stat: path={{ home_dir}}/.oh-my-zsh
+  stat: path={{ home_dir }}/.oh-my-zsh
   register: oh_my_zsh_installed
 
 - name: Install oh-my-zsh

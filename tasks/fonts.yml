@@ -10,7 +10,7 @@
   when: brew_cask_fonts_installed|failed
 
 - name: Install fonts
-  command: brew cask install  {{ item }}
+  command: brew cask install {{ item }}
   with_items:
     - font-inconsolata-dz-for-powerline
     - font-inconsolata
