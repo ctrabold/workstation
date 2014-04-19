@@ -92,12 +92,12 @@
        - vim
        - zsh
     caskroom_dir: /usr/local/caskroom
-    dotfiles_dir: /Users/ctrabold/dotfiles
+    dotfiles_dir: "{{ ansible_env.HOME }}/dotfiles"
     email: info@christian-trabold.de
-    username: ctrabold
+    username: "{{ ansible_env.USER }}"
     user_group: staff
     github_username: ctrabold
-    home_dir: /Users/ctrabold
+    home_dir: "{{ ansible_env.HOME }}"
     name: Christian Trabold
     zsh_path: /usr/local/bin/zsh
 
@@ -114,4 +114,4 @@
     - include: tasks/dotfiles.yml tags=dotfiles
 
   post_tasks:
-      - shell: echo "Setup finished on {{ ansible_hostname }} running for {{ ansible_user_id }}. Have a good time!"
+    - debug: msg="Setup finished on {{ ansible_hostname }} running for {{ username }}. Have a good time!"
