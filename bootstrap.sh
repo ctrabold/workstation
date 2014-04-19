@@ -5,6 +5,8 @@ set -e
 # Smoketest environment
 if [[ `which python` ]]; then
   echo "OK Found python!"
+else
+  echo "Please install python first."
 fi
 
 # Installing most important package
@@ -23,4 +25,4 @@ fi
 
 # Run ansible
 echo "INFO Execute ansible playbook"
-ansible-playbook -vvvv -i ./hosts.ini -K playbook.yml --extra-vars "login_user=$USER ansible_hostname=`hostname -f`"
+ansible-playbook -i ./hosts.ini -K playbook.yml
