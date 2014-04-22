@@ -3,7 +3,9 @@
 
   vars:
     applications:
-      # TODO ct 2014-04-19 How to handle App-Store Apps?
+      # INFO ct 2014-04-22 most of the apps are commented out
+      # because of the slow internet in cambodia
+      # they should work just fine when un-commented
       # - adium
       # - alfred
       # - appcleaner
@@ -66,6 +68,7 @@
 #     - pwgen
 #     - rbenv
       - rbenv-gem-rehash
+      - rename
 #     - ruby-install
 #      - tesseract
 #     - tig

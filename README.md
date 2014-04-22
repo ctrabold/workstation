@@ -1,12 +1,12 @@
 # workstation
 
-An approach to configure my dev workstation while learning ansible. Very much WIP
+An approach to configure my dev workstation while learning [Ansible](http://www.ansible.com/). Very much WIP
 
 My goal is to reduce the manual steps when installing my Macbook and Ubuntu machine to a minimum.
 
 Because it's boring.
 
-I also use this repo to document my experience with Ansible.
+I also use this repo to document my experience with [Ansible](http://www.ansible.com/).
 
 Because it's fun.
 
@@ -20,7 +20,7 @@ Use at your own risk. Thanks!
 
 # Howtos
 
-Q: How do I see a list of all of the ansible_ variables?
+Q: How do I see a list of all of the `ansible_` variables?<br>
 A: Run this command
 
     ansible -m setup localhost -i hosts.ini
@@ -28,8 +28,9 @@ A: Run this command
 
 # TODOs / ideas
 
-- Check if homebrew is outdated
-- Fix rubygems install issues
+- How to handle App-Store Apps? AppleScript?
+- Check if `homebrew` is outdated
+- Fix `rubygems` install issues
 - Add more Apps / create custom casks
 <pre>
 iShowU_1.92.3.dmg
