@@ -18,6 +18,18 @@ I use this repo to learn a new tool. Thus I consider the content unstable.
 Use at your own risk. Thanks!
 
 
+# Installation
+
+    cd
+    mkdir -p bin/
+    git clone git@github.com:ctrabold/workstation.git bin/setup
+
+    ./bin/setup/bootstrap.sh
+
+    <provide sudo password>
+    <watch ansible do his thing>
+
+
 # Howtos
 
 Q: How do I see a list of all of the `ansible_` variables?<br>
