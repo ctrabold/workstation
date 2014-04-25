@@ -1,24 +1,55 @@
 ---
-# - name: Install ruby packages for compiling gems
-#   sudo: True
-#   apt: pkg={{item}} state=installed
-#   with_items:
-#      - openssl
-#      - libssl-dev
-#     autoconf bison build-essential libssl-dev libyaml-dev libreadline6 libreadline6-dev zlib1g zlib1g-dev
-
-# 267  sudo apt-get install ruby1.8-dev ruby1.8 ri1.8 rdoc1.8 irb1.8
-# 268  sudo apt-get install libreadline-ruby1.8 libruby1.8 libopenssl-ruby
-# 269  sudo apt-get install libxslt-dev libxml2-dev
+  #
+  # Mac OS X
+  #
 
 - name: Install rbenv
   homebrew: name={{ item }} state=present
+  when: ansible_os_family == "Darwin"
   with_items:
     - rbenv
     - ruby-build
 
+
+  #
+  # Ubuntu
+  #
+
+  # INFO This is for gems that need to be compiled
+  # like `nokogiri` and friends.
+- name: Install ruby packages for compiling gems
+  sudo: True
+  apt: pkg={{item}} state=installed
+  when: ansible_os_family == "Ubuntu"
+  with_items:
+    - autoconf
+    - bison
+    - build-essential
+    - libopenssl-ruby
+    - libreadline6
+    - libreadline6-dev
+    - libssl-dev
+    - libxml2-dev
+    - libxslt-dev
+    - libyaml-dev
+    - openssl
+    - zlib1g
+    - zlib1g-dev
+
+- name: Install rbenv
+  apt: package={{ item }} state=present
+  when: ansible_os_family == "Ubuntu"
+  with_items:
+    - rbenv
+    - ruby-build
+
+
+  #
+  # All OS
+  #
+
 - name: Install ruby versions
-  command: rbenv install --skip-existing {{ item }} state=present
+  command: rbenv install {{ item }} --skip-existing creates={{ home_dir }}/.rbenv/versions/{{ item }}
   with_items:
     - 1.9.3-p545
     - 2.0.0-p451
