@@ -2,6 +2,8 @@
 
 set -e
 
+SOURCE_DIR=`dirname "${BASH_SOURCE[0]}"`
+
 # Smoketest environment
 if [[ `which python` ]]; then
   echo "OK Found python!"
@@ -25,4 +27,4 @@ fi
 
 # Run ansible
 echo "INFO Execute ansible playbook"
-ansible-playbook -i ./hosts.ini -K playbook.yml
+ansible-playbook -i ${SOURCE_DIR}/hosts.ini -K ${SOURCE_DIR}/playbook.yml
