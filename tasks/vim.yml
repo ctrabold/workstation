@@ -13,7 +13,7 @@
 - name: Pull in vim plugins
   git: repo=git://github.com/{{ item.name }}/{{ item.repo }}.git
        dest={{ home_dir }}/.janus/{{ item.repo }}
-       update=yes
+       update=no
   with_items:
     - { name: 'vim-scripts', repo: 'Auto-Pairs' }
     - { name: 'vim-scripts', repo: 'Align' }
