@@ -8,7 +8,7 @@
   command: /usr/bin/curl -Lo- https://bit.ly/janus-bootstrap | bash creates={{ home_dir }}/.vim/Rakefile
 
 - name: Create folder for janus plugins
-  file: path={{ home_dir }}/.janus owner={{ username }} group={{ user_group }} mode=0755
+  file: path={{ home_dir }}/.janus owner={{ username }} mode=0755
 
 - name: Pull in vim plugins
   git: repo=git://github.com/{{ item.name }}/{{ item.repo }}.git
