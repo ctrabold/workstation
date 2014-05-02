@@ -21,6 +21,7 @@ else
     echo "Ansible is already installed"
   else
     sudo add-apt-repository -y ppa:rquillo/ansible
+    sudo apt-get update
     sudo apt-get install -y ansible
   fi
 fi
