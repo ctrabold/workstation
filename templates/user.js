@@ -26,6 +26,8 @@ user_pref("browser.search.openintab", true);
 user_pref("browser.startup.homepage", "about:blank");
 user_pref("browser.tabs.animate", false);
 user_pref("browser.tabs.loadBookmarksInBackground", true);
+user_pref("browser.urlbar.clickSelectsAll", false);
+user_pref("browser.urlbar.doubleClickSelectsAll", false);
 user_pref("browser.urlbar.formatting.enabled", false);
 user_pref("browser.urlbar.trimURLs", false);
 user_pref("general.autoScroll", true);
