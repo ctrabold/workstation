@@ -85,6 +85,8 @@
        - git-core
        - git-extras
        - htop
+       - python-apt
+       - python-pip
        - rbenv
        - ruby
        - ruby-build
