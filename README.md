@@ -37,6 +37,12 @@ A: Run this command
 
     ansible -m setup localhost -i hosts.ini
 
+Q: How to write good looking ansible code that is easy to maintain?<br>
+A: https://github.com/edx/configuration/wiki/Ansible-Coding-Conventions
+
+Q: How can I manipulate variables?<br>
+A: http://jinja.pocoo.org/docs/templates/#builtin-filters
+
 
 # TODOs / ideas
 
