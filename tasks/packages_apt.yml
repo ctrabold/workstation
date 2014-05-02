@@ -1,5 +1,65 @@
 ---
-- name: Install utilities
+- name: Packages | misc | Install utilities
   sudo: True
-  apt: pkg={{item}} state=installed
+  apt: pkg={{ item }} state=installed
   with_items: apt_packages
+
+# TODO Setup apt-cacher first?
+# http://askubuntu.com/questions/248996/howto-use-apt-cacher-ng-only-when-available#line-391
+# https://help.ubuntu.com/community/Apt-Cacher-Server
+
+
+# RCM dotfile management
+#
+# @see https://thoughtbot.github.io/rcm/
+#
+# TODO Check if can we install rcm via package manager to avoid this dance
+- name: Packages | rcm | Check if rcm is installed
+  stat: path=/usr/bin/rcup
+  register: rcm_installed
+  tags: rcm
+
+- name: Packages | rcm | Download rcm package
+  get_url: url=https://thoughtbot.github.io/rcm/debs/rcm_1.2.2-2_all.deb dest=/tmp/rcm_1.2.2-2_all.deb sha256sum=6cbc6d74f38786989c5780da84d261ff362afa161f70f63a386307e4838b3839
+  when: rcm_installed.stat.exists == false
+  tags: rcm
+
+- name: Packages | rcm | Installs rcm package
+  sudo: True
+  apt: deb=/tmp/rcm_1.2.2-2_all.deb state=present
+  when: rcm_installed.stat.exists == false
+  tags: rcm
+
+
+# API Document Browser like Dash on Ubuntu
+#
+# @see http://askubuntu.com/questions/154020/is-there-any-api-document-browser-like-dash-on-ubuntu
+# @see http://zealdocs.org/usage.html
+
+# NOTE: Zeal depends on Qt5, so for Ubuntu versions older than 14.04 (Trusty), Ubuntu SDK must be added as well:
+# @see https://launchpad.net/~jerzy-kozera/+archive/zeal-ppa
+- name: Packages | zeal | register SDK PPA for older ubuntus
+  apt_repository: repo='ppa:ubuntu-sdk-team/ppa' state=present
+  when: ansible_lsb.major_release|int < 14
+  tags: zeal
+
+- name: Packages | zeal | register zeal PPA
+  apt_repository: repo='ppa:jerzy-kozera/zeal-ppa' state=present update_cache=true
+  tags: zeal
+
+- name: Packages | zeal | Install zeal
+  apt: pkg=zeal state=present
+  tags: zeal
+
+
+# f.lux makes the color of your computer's display adapt to the time of day
+# warm at night and like sunlight during the day.
+#
+# @see https://justgetflux.com/
+- name: Packages | f.lux | register f.lux PPA
+  apt_repository: repo='ppa:kilian/f.lux' state=present update_cache=true
+  tags: flux
+
+- name: Packages | f.lux | Install fluxgui
+  apt: pkg=fluxgui state=present
+  tags: flux
