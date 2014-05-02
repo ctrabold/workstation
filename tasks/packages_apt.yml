@@ -63,3 +63,36 @@
 - name: Packages | f.lux | Install fluxgui
   apt: pkg=fluxgui state=present
   tags: flux
+
+
+# 'nvalt' aka 'nvpy' on linux
+#
+# We use the tag 'nvalt' here in order to handle
+# the installation of the tool with ONE tag for all OS
+#
+# @see https://github.com/cpbotha/nvpy/blob/master/docs/installation.rst#ubuntu--mint--debian-step-by-step-1
+
+- name: Packages | nvalt | Install system packages
+  sudo: True
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - python-markdown
+    - python-tk
+  tags: nvalt
+
+- name: Packages | nvalt | Install nvalt
+  pip: name=nvpy state=present
+  tags: nvalt
+
+  # TODO Use `dotfiles` repo for that?
+- name: Packages | nvalt | Create configuration file
+  template: src=templates/nvpy.cfg dest={{home_dir}}/.nvpy.cfg
+  tags: nvalt
+
+- name: Packages | nvalt | Create desktop integration file
+  template: src=templates/vxlabs-nvpy.desktop dest={{ home_dir }}/vxlabs-nvpy.desktop
+  tags: nvalt
+
+- name: Packages | nvalt | Execute desktop integration
+  command: xdg-desktop-menu install {{ home_dir }}/vxlabs-nvpy.desktop
+  tags: nvalt
