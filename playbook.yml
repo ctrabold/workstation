@@ -108,10 +108,10 @@
 
   tasks:
     - include: tasks/homebrew.yml tags=homebrew
-      when: ansible_os_family == "Darwin"
+      when: ansible_distribution == "Darwin"
 
     - include: tasks/packages_apt.yml tags=apt
-      when: ansible_os_family == "Ubuntu"
+      when: ansible_distribution == "Ubuntu"
 
     - include: tasks/zsh.yml tags=zsh
     - include: tasks/ruby.yml tags=ruby
