@@ -1,0 +1,7 @@
+---
+
+# Start firefox with profile manager:
+#
+#  firefox -ProfileManager
+#
+# Create `user.js` file inside the user profile folder
