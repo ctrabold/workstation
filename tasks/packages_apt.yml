@@ -56,11 +56,11 @@
 # warm at night and like sunlight during the day.
 #
 # @see https://justgetflux.com/
-- name: Packages | f.lux | register f.lux PPA
+- name: Packages | flux | register f.lux PPA
   apt_repository: repo='ppa:kilian/f.lux' state=present update_cache=true
   tags: flux
 
-- name: Packages | f.lux | Install fluxgui
+- name: Packages | flux | Install fluxgui
   apt: pkg=fluxgui state=present
   tags: flux
 
