@@ -28,4 +28,4 @@ fi
 
 # Run ansible
 echo "INFO Execute ansible playbook"
-ansible-playbook -i ${SOURCE_DIR}/hosts.ini -K ${SOURCE_DIR}/playbook.yml
+ansible-playbook -i ${SOURCE_DIR}/hosts.ini -K ${SOURCE_DIR}/playbook.yml $*
