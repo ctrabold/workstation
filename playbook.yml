@@ -1,6 +1,11 @@
 ---
 - hosts: all
 
+  vars_prompt:
+    - name: "ssh_private_key_password"
+      prompt: "SSH key password"
+      confirm: yes
+      private: yes
   vars:
     applications:
       # INFO ct 2014-04-22 most of the apps are commented out
@@ -105,6 +110,7 @@
     home_dir: "{{ ansible_env.HOME }}"
     name: Christian Trabold
     zsh_path: /usr/local/bin/zsh
+    ssh_private_key_name: id_rsa
 
   tasks:
     - include: tasks/homebrew.yml tags=homebrew
@@ -118,6 +124,7 @@
     - include: tasks/ruby.yml tags=ruby
     - include: tasks/vim.yml tags=vim
     - include: tasks/dotfiles.yml tags=dotfiles
+    - include: tasks/ssh_key.yml tags=base
 
   post_tasks:
     - debug: msg="Setup finished on {{ ansible_hostname }} running for {{ username }}. Have a good time!"

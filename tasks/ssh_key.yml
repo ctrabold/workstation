@@ -1,0 +1,6 @@
+---
+- name: SSH | Create folder
+  file: path={{ home_dir }}/.ssh owner={{ username }} mode=0755
+
+- name: SSH | Generate key
+  command: ssh-keygen -b 2024 -t rsa -P "{{ ssh_private_key_password }}" -f {{ home_dir }}/.ssh/{{ ssh_private_key_name }} creates={{ home_dir }}/.ssh/{{ ssh_private_key_name }}
