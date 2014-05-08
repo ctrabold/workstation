@@ -4,6 +4,24 @@
   apt: pkg={{ item }} state=installed
   with_items: apt_packages
 
+
+  #
+  # Keyboard layout
+  #
+- name: Settings | Check current layout
+  shell: cat /etc/default/keyboard
+  register: get_layout
+
+- name: Settings | Set keyboard layout
+  sudo: true
+  template: src=templates/keyboard dest=/etc/default/keyboard
+
+- name: Settings | Enable keyboard layout
+  sudo: true
+  command: dpkg-reconfigure -f noninteractive keyboard-configuration
+  when: get_layout.stdout.find('ctrl:nocaps') == false
+
+
 # TODO Setup apt-cacher first?
 # http://askubuntu.com/questions/248996/howto-use-apt-cacher-ng-only-when-available#line-391
 # https://help.ubuntu.com/community/Apt-Cacher-Server
