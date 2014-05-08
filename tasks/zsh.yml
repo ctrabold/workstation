@@ -6,12 +6,12 @@
 - name: Enable zsh in /etc/shells
   sudo: true
   shell: /bin/sh -c 'grep -q "{{ zsh_path }}" /etc/shells || echo "{{ zsh_path }}" >> /etc/shells'
-  when: current_shell.stdout != '/usr/local/bin/zsh'
+  when: current_shell.stdout.find('zsh') == false
 
 - name: Set zsh as default shell
   sudo: true
   shell: chsh -s {{ zsh_path }}
-  when: current_shell.stdout != '/usr/local/bin/zsh'
+  when: current_shell.stdout.find('zsh') == false
 
 - name: Check oh-my-zsh is installed
   stat: path={{ home_dir }}/.oh-my-zsh
