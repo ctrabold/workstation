@@ -113,6 +113,7 @@
     - include: tasks/packages_apt.yml tags=apt
       when: ansible_distribution == "Ubuntu"
 
+    - include: tasks/workspace.yml tags=base
     - include: tasks/zsh.yml tags=zsh
     - include: tasks/ruby.yml tags=ruby
     - include: tasks/vim.yml tags=vim
