@@ -90,6 +90,7 @@
        - git-core
        - git-extras
        - htop
+       - nautilus-dropbox
        - python-apt
        - python-pip
        - rbenv
