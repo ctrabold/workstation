@@ -4,8 +4,13 @@
 #   apt: pkg=vim state=installed
 
   # @see https://github.com/carlhuda/janus#customization for details
-- name: Install janus
-  command: /usr/bin/curl -Lo- https://bit.ly/janus-bootstrap | bash creates={{ home_dir }}/.vim/Rakefile
+
+- name: Vim | Install janus
+  git: repo=https://github.com/carlhuda/janus.git dest={{ home_dir }}/.vim
+  when: rbenv_installed.stat.exists == false
+
+- name: Vim | Install janus sub modules
+  command: rake creates={{ home_dir }}/.janus chdir={{ home_dir }}/.vim
 
 - name: Create folder for janus plugins
   file: path={{ home_dir }}/.janus owner={{ username }} mode=0755
