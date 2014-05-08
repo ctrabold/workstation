@@ -3,12 +3,17 @@
   # Mac OS X
   #
 
-- name: Install rbenv
-  homebrew: name={{ item }} state=present
-  when: ansible_os_family == "Darwin"
-  with_items:
-    - rbenv
-    - ruby-build
+- name: Check dotfiles are installed
+  stat: path={{ home_dir }}/.rbenv
+  register: rbenv_installed
+
+- name: Check out rbenv repo
+  git: repo=https://github.com/sstephenson/rbenv.git dest={{ home_dir }}/.rbenv
+  when: rbenv_installed.stat.exists == false
+
+- name: Check out rbenv plugins
+  git: repo=https://github.com/sstephenson/ruby-build.git dest={{ home_dir }}/.rbenv/plugins/ruby-build
+  when: rbenv_installed.stat.exists == false
 
 
   #
@@ -53,10 +58,10 @@
   with_items:
     - 1.9.3-p545
     - 2.0.0-p451
-    # - 2.1.0
+    - 2.1.0
 
 - name: Set global ruby versions
-  command: rbenv global 2.0.0-p451
+  command: rbenv global 2.1.0
 
 # Not working ATM
 # @see http://stackoverflow.com/questions/22115936/install-bundler-gem-using-ansible
