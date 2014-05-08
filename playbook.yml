@@ -124,6 +124,7 @@
     - include: tasks/ruby.yml tags=ruby
     - include: tasks/vim.yml tags=vim
     - include: tasks/dotfiles.yml tags=dotfiles
+    - include: tasks/fonts.yml tags=base
     - include: tasks/ssh_key.yml tags=base
 
   post_tasks:

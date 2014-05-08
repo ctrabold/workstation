@@ -21,4 +21,4 @@
 #
 
 - include: fonts_ubuntu.yml
-  when: ansible_os_family == "Ubuntu"
+  when: ansible_distribution == "Ubuntu"
