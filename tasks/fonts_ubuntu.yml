@@ -3,7 +3,7 @@
   git: repo=https://github.com/Lokaltog/powerline-fonts.git dest={{ home_dir }}/workspace/powerline-fonts update=no
   tags: fonts
 
-- name: Fonts | Copy fonts
+- name: Fonts | Link fonts
   file: src={{ home_dir }}/workspace/powerline-fonts/Meslo dest={{ home_dir }}/.fonts owner={{ username }} state=link
   tags: fonts
 
