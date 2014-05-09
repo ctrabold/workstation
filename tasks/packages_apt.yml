@@ -120,3 +120,32 @@
 - name: Packages | nvalt | Execute desktop integration
   command: xdg-desktop-menu install {{ home_dir }}/vxlabs-nvpy.desktop
   tags: nvalt
+
+
+# Sublimetext3 Installation
+#
+# @see http://docs.sublimetext.info/en/latest/getting_started/install.html#linux
+#
+- name: Packages | sublime | Check if sublime is installed
+  stat: path=/usr/bin/sublime
+  register: sublime_installed
+  tags: sublime
+
+- name: Packages | sublime | Download sublime package
+  get_url: url=http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3059_amd64.deb dest=/tmp/sublime-text_amd64.deb
+  when: sublime_installed.stat.exists == false
+  tags: sublime
+
+- name: Packages | sublime | Installs sublime package
+  sudo: True
+  apt: deb=/tmp/sublime-text_amd64.deb state=present
+  when: sublime_installed.stat.exists == false
+  tags: sublime
+
+- name: Packages | sublime | Link binary
+  file: src=/opt/sublime_text/sublime_text dest=/usr/bin/sublime state=link
+  tags: sublime
+
+- name: Packages | sublime | Integrate into desktop
+  template: src=templates/sublime.desktop dest=/usr/share/applications/sublime.desktop
+  tags: sublime
