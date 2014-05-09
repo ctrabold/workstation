@@ -90,6 +90,7 @@
        - git-core
        - git-extras
        - htop
+       - keepass2
        - nautilus-dropbox
        - python-apt
        - python-pip
