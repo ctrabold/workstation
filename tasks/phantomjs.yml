@@ -1,0 +1,17 @@
+---
+- name: Packages | phantomjs | Check if is installed
+  stat: path=/usr/bin/phantomjs
+  register: phantomjs_installed
+
+- name: Packages | phantomjs | Download package
+  get_url: url=https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-{{ ansible_architecture }}.tar.bz2 dest=/tmp/phantomjs.tar.bz2
+  when: phantomjs_installed.stat.exists == false
+
+- name: Packages | phantomjs | Installs phantomjs package
+  unarchive: src=/tmp/phantomjs.tar.bz2 dest=/tmp/
+  when: phantomjs_installed.stat.exists == false
+
+- name: Install | phantomjs | Add to PATH
+  sudo: true
+  copy: src=/tmp/phantomjs-1.9.7-linux-{{ ansible_architecture }}/bin/phantomjs dest=/usr/local/bin mode=0755
+  when: phantomjs_installed.stat.exists == false
