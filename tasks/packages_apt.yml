@@ -149,5 +149,6 @@
   tags: sublime
 
 - name: Packages | sublime | Integrate into desktop
+  sudo: true
   template: src=templates/sublime.desktop dest=/usr/share/applications/sublime.desktop
   tags: sublime
