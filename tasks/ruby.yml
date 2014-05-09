@@ -12,8 +12,10 @@
   when: rbenv_installed.stat.exists == false
 
 - name: Check out rbenv plugins
-  git: repo=https://github.com/sstephenson/ruby-build.git dest={{ home_dir }}/.rbenv/plugins/ruby-build
-  when: rbenv_installed.stat.exists == false
+  git: repo=https://github.com/sstephenson/{{ item }}.git dest={{ home_dir }}/.rbenv/plugins/{{ item }} update=no
+  with_items:
+    - ruby-build
+    - rbenv-gem-rehash
 
 
   #
