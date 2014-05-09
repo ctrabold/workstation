@@ -148,6 +148,10 @@
   file: src=/opt/sublime_text/sublime_text dest=/usr/bin/sublime state=link
   tags: sublime
 
+- name: Packages | sublime | Link settings
+  file: src={{ home_dir }}/dotfiles/sublimetext3/ dest={{ home_dir }}/.config/sublime-text-3/Packages/User state=link
+  tags: sublime
+
 - name: Packages | sublime | Integrate into desktop
   sudo: true
   template: src=templates/sublime.desktop dest=/usr/share/applications/sublime.desktop
