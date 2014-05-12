@@ -5,9 +5,9 @@
 #  firefox -ProfileManager
 #
 # Create `user.js` file inside the user profile folder
-- name: Firefox | Get firefox profile directory
+- name: Firefox | Get profile directory
   shell: ls -1 -d {{home_dir}}/.mozilla/firefox/*.default
   register: firefox_profile_dir
 
 - name: Firefox | Set user preferences
-  copy: src=templates/user.js dest={{ firefox_profile_dir.stdout }}/user.js
+  copy: src=templates/firefox_user.js dest={{ firefox_profile_dir.stdout }}/user.js
