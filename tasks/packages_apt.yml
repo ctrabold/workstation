@@ -5,6 +5,24 @@
   with_items: apt_packages
   tags: packages
 
+
+  #
+  # Setup apt-cacher
+  # @see http://serverascode.com/2013/11/16/apt-cacher-ng.html
+  #
+- name: Packages | apt-cacher-ng | Register proxy for apt-get
+  sudo: true
+  template: src=templates/01proxy dest=/etc/apt/apt.conf.d/01proxy
+  tags: apt-cacher
+
+- name: Add
+  sudo: true
+  lineinfile: dest=/etc/apt-cacher-ng/acng.conf line='BindAddress:localhost {{ ansible_default_ipv4.address }} publicNameOnMainInterface'
+  notify:
+    - restart apt-cacher
+  tags: apt-cacher
+
+
   #
   # Keyboard layout
   #
@@ -23,10 +41,6 @@
   command: dpkg-reconfigure -f noninteractive keyboard-configuration
   when: get_layout.stdout.find('ctrl:nocaps') == false
   tags: keyboard
-
-# TODO Setup apt-cacher first?
-# http://askubuntu.com/questions/248996/howto-use-apt-cacher-ng-only-when-available#line-391
-# https://help.ubuntu.com/community/Apt-Cacher-Server
 
 
 # RCM dotfile management

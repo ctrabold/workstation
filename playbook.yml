@@ -83,6 +83,7 @@
 #     - wget
     apt_packages:
        - ack
+       - apt-cacher-ng
        - autojump
        - build-essential
        - clipit
@@ -135,6 +136,10 @@
       when: ansible_distribution == "Ubuntu"
     - include: tasks/packer.yml tags=packer
       when: ansible_distribution == "Ubuntu"
+
+  handlers:
+    - name: restart apt-cacher
+      service: name=apt-cacher-ng state=restarted
 
   post_tasks:
     - debug: msg="Setup finished on {{ ansible_hostname }} running for {{ username }}. Have a good time!"
