@@ -104,6 +104,7 @@
        - tmux
        - tree
        - vim
+       - xclip
        - zsh
     caskroom_dir: /usr/local/caskroom
     dotfiles_dir: "{{ ansible_env.HOME }}/dotfiles"
@@ -133,6 +134,8 @@
     - include: tasks/phantomjs.yml tags=phantomjs
       when: ansible_distribution == "Ubuntu"
     - include: tasks/firefox.yml tags=firefox
+      when: ansible_distribution == "Ubuntu"
+    - include: tasks/thunderbird.yml tags=thunderbird
       when: ansible_distribution == "Ubuntu"
     - include: tasks/packer.yml tags=packer
       when: ansible_distribution == "Ubuntu"
