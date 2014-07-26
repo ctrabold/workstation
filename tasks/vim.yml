@@ -23,6 +23,5 @@
     - { name: 'vim-scripts', repo: 'Auto-Pairs' }
     - { name: 'vim-scripts', repo: 'Align' }
     - { name: 'Lokaltog', repo: 'vim-powerline' }
-    - { name: 'Lokaltog', repo: 'vim-powerline' }
     - { name: 'rizzatti', repo: 'funcoo.vim' }
     - { name: 'rizzatti', repo: 'dash.vim' }
