@@ -88,6 +88,7 @@
        - build-essential
        - clipit
        - curl
+       - exuberant-ctags
        - git
        - git-core
        - git-extras
