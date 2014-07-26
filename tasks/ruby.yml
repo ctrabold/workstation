@@ -1,27 +1,15 @@
 ---
-  #
-  # Mac OS X
-  #
-
-- name: Check dotfiles are installed
-  stat: path={{ home_dir }}/.rbenv
-  register: rbenv_installed
-
-- name: Check out rbenv repo
+- name: Install rbenv repo
   git: repo=https://github.com/sstephenson/rbenv.git dest={{ home_dir }}/.rbenv
-  when: rbenv_installed.stat.exists == false
 
-- name: Check out rbenv plugins
+- name: Install rbenv plugins
   git: repo=https://github.com/sstephenson/{{ item }}.git dest={{ home_dir }}/.rbenv/plugins/{{ item }} update=no
   with_items:
     - ruby-build
     - rbenv-gem-rehash
 
-
+  # Ubuntu only
   #
-  # Ubuntu
-  #
-
   # INFO This is for gems that need to be compiled
   # like `nokogiri` and friends.
 - name: Install ruby packages for compiling gems
@@ -42,18 +30,6 @@
     - openssl
     - zlib1g
     - zlib1g-dev
-
-- name: Install rbenv
-  apt: package={{ item }} state=present
-  when: ansible_os_family == "Ubuntu"
-  with_items:
-    - rbenv
-    - ruby-build
-
-
-  #
-  # All OS
-  #
 
 - name: Install ruby versions
   command: rbenv install {{ item }} --skip-existing creates={{ home_dir }}/.rbenv/versions/{{ item }}
