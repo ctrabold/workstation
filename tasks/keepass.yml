@@ -1,0 +1,11 @@
+---
+# @see http://sourceforge.net/p/keepass/discussion/329220/thread/17d1bd26
+- name: register PPA
+  sudo: True
+  apt_repository: repo='ppa:jtaylor/keepass' state=present update_cache=true
+  tags: keepass
+
+- name: Install
+  sudo: True
+  apt: pkg=keepass2 state=present
+  tags: keepass
