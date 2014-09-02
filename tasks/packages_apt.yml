@@ -60,7 +60,7 @@
 
 - name: Packages | rcm | Installs rcm package
   sudo: True
-  apt: deb=/tmp/rcm_1.2.2-2_all.deb state=present
+  apt: deb=/tmp/rcm_1.2.2-2_all.deb state=installed
   when: rcm_installed.stat.exists == false
   tags: rcm
 
