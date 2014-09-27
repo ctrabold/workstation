@@ -89,6 +89,7 @@
        - clipit
        - curl
        - exuberant-ctags
+       - fping
        - git
        - git-core
        - git-extras
