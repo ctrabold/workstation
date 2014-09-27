@@ -12,13 +12,12 @@ else
 fi
 
 # Installing most important package
-echo "INFO Installing ansible..."
-if [[ $OSTYPE == darwin* ]]; then
-  brew install ansible
+if [[ `which ansible` ]]; then
+  echo "Ansible is already installed"
 else
-  repo_installed=`grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep rquillo/ansible`
-  if [[ repo_installed ]]; then
-    echo "Ansible is already installed"
+  echo "INFO Installing ansible..."
+  if [[ $OSTYPE == darwin* ]]; then
+    brew install ansible
   else
     sudo add-apt-repository -y ppa:rquillo/ansible
     sudo apt-get update
