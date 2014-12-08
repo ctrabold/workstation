@@ -148,23 +148,25 @@
   tags: sublime
 
 - name: Packages | sublime | Download sublime package
-  get_url: url=http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3059_amd64.deb dest=/tmp/sublime-text_amd64.deb
+  get_url: url=http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3059_amd64.deb
+           dest=/tmp/sublime-text_amd64.deb
   when: sublime_installed.stat.exists == false
   tags: sublime
 
 - name: Packages | sublime | Installs sublime package
   sudo: True
-  apt: deb=/tmp/sublime-text_amd64.deb state=present
+  apt: deb=/tmp/sublime-text_amd64.deb state=installed
   when: sublime_installed.stat.exists == false
   tags: sublime
 
 - name: Packages | sublime | Link binary
+  sudo: True
   file: src=/opt/sublime_text/sublime_text dest=/usr/bin/sublime state=link
   tags: sublime
 
-- name: Packages | sublime | Link settings
-  file: src={{ home_dir }}/dotfiles/sublimetext3/ dest={{ home_dir }}/.config/sublime-text-3/Packages/User state=link
-  tags: sublime
+#- name: Packages | sublime | Link settings
+#  file: src={{ home_dir }}/dotfiles/sublimetext3/ dest={{ home_dir }}/.config/sublime-text-3/Packages/User state=link
+#  tags: sublime
 
 - name: Packages | sublime | Integrate into desktop
   sudo: true
