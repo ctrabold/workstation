@@ -1,6 +1,7 @@
 apt_packages:
   - ack-grep
   - apt-cacher-ng
+  - apt-show-versions
   - autojump
   - boxes
   - build-essential
