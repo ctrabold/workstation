@@ -2,6 +2,7 @@ apt_packages:
   - ack-grep
   - apt-cacher-ng
   - autojump
+  - boxes
   - build-essential
   - clipit
   - curl
