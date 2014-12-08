@@ -29,6 +29,7 @@ apt_packages:
   - rbenv
   - ruby
   - ruby-build
+  - scrot
   - siege
   - sshpass
   - terminator
