@@ -34,8 +34,6 @@
 - name: Install ruby versions
   command: rbenv install {{ item }} --skip-existing creates={{ home_dir }}/.rbenv/versions/{{ item }}
   with_items:
-    - 1.9.3-p545
-    - 2.0.0-p451
     - 2.1.0
 
 - name: Set global ruby versions
