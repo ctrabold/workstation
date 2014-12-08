@@ -39,4 +39,5 @@ apt_packages:
   - unattended-upgrades
   - vim
   - xclip
+  - zim
   - zsh
