@@ -139,7 +139,6 @@ user_pref("mail.server.server1.cleanupBodies", false);
 user_pref("mail.server.server1.cleanup_inbox_on_exit", true);
 user_pref("mail.server.server1.daysToKeepBodies", 1);
 user_pref("mail.server.server1.daysToKeepHdrs", 1);
-user_pref("mail.server.server1.directory", "/home/christian/.thunderbird/22wxjytc.default/ImapMail/imap.googlemail.com");
 user_pref("mail.server.server1.directory-rel", "[ProfD]ImapMail/imap.googlemail.com");
 user_pref("mail.server.server1.downloadByDate", false);
 user_pref("mail.server.server1.downloadUnreadOnly", false);
