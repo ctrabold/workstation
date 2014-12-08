@@ -1,0 +1,16 @@
+---
+# @see http://cran.r-project.org/bin/linux/ubuntu/README
+- name: Register official repository
+  sudo: yes
+  apt_repository: repo='deb  http://cran.stat.nus.edu.sg/bin/linux/ubuntu {{ ansible_distribution_release }}/' state=present
+
+- name: Register repository key
+  sudo: yes
+  apt_key: keyserver=keyserver.ubuntu.com id=E084DAB9 state=present
+
+- name: Install packages
+  sudo: yes
+  apt: pkg={{ item }} state=installed update_cache=yes cache_valid_time=3600
+  with_items:
+    - r-base
+    - r-recommended
