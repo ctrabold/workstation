@@ -6,6 +6,7 @@ apt_packages:
   - build-essential
   - clipit
   - curl
+  - ditaa
   - enigmail
   - exuberant-ctags
   - fping
