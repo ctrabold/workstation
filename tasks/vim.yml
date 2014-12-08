@@ -7,7 +7,6 @@
 
 - name: Vim | Install janus
   git: repo=https://github.com/carlhuda/janus.git dest={{ home_dir }}/.vim
-  when: rbenv_installed.stat.exists == false
 
 - name: Vim | Install janus sub modules
   command: rake creates={{ home_dir }}/.janus chdir={{ home_dir }}/.vim
