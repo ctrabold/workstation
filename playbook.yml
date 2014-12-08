@@ -1,150 +1,29 @@
 ---
 - hosts: all
+  gather_facts: true
+  tasks:
+    - group_by: key={{ ansible_distribution }}
+    - include: tasks/workspace.yml tags=base
+    #- include: tasks/zsh.yml tags=zsh
+    - include: tasks/ruby.yml tags=ruby
+    #- include: tasks/vim.yml tags=vim
+    - include: tasks/dotfiles.yml tags=dotfiles
+    #- include: tasks/fonts.yml tags=base
+    #- include: tasks/ssh_key.yml tags=base
+  post_tasks:
+    - debug: msg="Setup finished on {{ ansible_hostname }} running for {{ username }}. Have a good time!"
 
-  vars_prompt:
-    - name: "ssh_private_key_password"
-      prompt: "SSH key password"
-      confirm: yes
-      private: yes
-  vars:
-    applications:
-      # INFO ct 2014-04-22 most of the apps are commented out
-      # because of the slow internet in cambodia
-      # they should work just fine when un-commented
-      # - adium
-      # - alfred
-      # - appcleaner
-      # - atmonitor
-      # - ccmenu
-      # - charles
-      # - cord
-      # - dropbox
-      # - firefox
-      # - flux
-      # - freemind
-      # - gephi
-      # - github
-      # - google-chrome
-      # - google-drive
-      # - google-hangouts
-      # - google-refine
-      # - gpgtools
-      # - handbrake
-      # - imageoptim
-      # - iterm2
-      # - kaleidoscope
-      # - kdiff3
-      # - keepassx
-      # - libreoffice
-      # - mou
-      # - nvalt
-      # - onepassword
-      # - owasp-zap
-      # - pandoc
-      # - sequel-pro
-      # - sublime-text
-      # - teamviewer
-      # - the-unarchiver
-      # - tunnelblick
-      # - typinator
-      # - vagrant
-      # - virtualbox
-    application_dir: /Applications
-    brews:
-      - ack
-#      - chromedriver
-      - docker
-#      - hub
-#      - ios-webkit-debug-proxy
-      - rsync
-      - zsh
-#     - autojump
-#     - cclive
-#     - ffmpeg
-#     - git-extras
-#     - graphviz
-#     # @see https://gist.github.com/jimbojsb/1630790
-#     - highlight
-#     - htop
-#     - imagemagick
-#     - jenkins-lts
-#     - parallel
-#      - phantomjs
-#     - pwgen
-#     - rbenv
-      - rbenv-gem-rehash
-      - rename
-#     - ruby-install
-#      - tesseract
-#     - tig
-#     - tmux
-#     - tree
-#     - vim
-#     - wget
-    apt_packages:
-       - ack
-       - apt-cacher-ng
-       - autojump
-       - build-essential
-       - clipit
-       - curl
-       - exuberant-ctags
-       - fping
-       - git
-       - git-core
-       - git-extras
-       - htop
-       - keepass2
-       - nautilus-dropbox
-       - python-apt
-       - python-pip
-       - rbenv
-       - ruby
-       - ruby-build
-       - siege
-       - terminator
-       - tmux
-       - tree
-       - vim
-       - xclip
-       - zsh
-    caskroom_dir: /usr/local/caskroom
-    dotfiles_dir: "{{ ansible_env.HOME }}/dotfiles"
-    email: info@christian-trabold.de
-    username: "{{ ansible_env.USER }}"
-    user_group: staff
-    github_username: ctrabold
-    home_dir: "{{ ansible_env.HOME }}"
-    name: Christian Trabold
-    zsh_path: /usr/local/bin/zsh
-    ssh_private_key_name: id_rsa
-
+- hosts: Darwin
   tasks:
     - include: tasks/homebrew.yml tags=homebrew
-      when: ansible_distribution == "Darwin"
 
-    - include: tasks/packages_apt.yml tags=apt
-      when: ansible_distribution == "Ubuntu"
-
-    - include: tasks/workspace.yml tags=base
-    - include: tasks/zsh.yml tags=zsh
-    - include: tasks/ruby.yml tags=ruby
-    - include: tasks/vim.yml tags=vim
-    - include: tasks/dotfiles.yml tags=dotfiles
-    - include: tasks/fonts.yml tags=base
-    - include: tasks/ssh_key.yml tags=base
+- hosts: Ubuntu
+  tasks:
     - include: tasks/phantomjs.yml tags=phantomjs
-      when: ansible_distribution == "Ubuntu"
     - include: tasks/firefox.yml tags=firefox
-      when: ansible_distribution == "Ubuntu"
-    - include: tasks/thunderbird.yml tags=thunderbird
-      when: ansible_distribution == "Ubuntu"
+    #- include: tasks/thunderbird.yml tags=thunderbird
     - include: tasks/packer.yml tags=packer
-      when: ansible_distribution == "Ubuntu"
-
+    - include: tasks/packages_apt.yml tags=apt
   handlers:
     - name: restart apt-cacher
       service: name=apt-cacher-ng state=restarted
-
-  post_tasks:
-    - debug: msg="Setup finished on {{ ansible_hostname }} running for {{ username }}. Have a good time!"
