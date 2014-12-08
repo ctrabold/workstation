@@ -20,8 +20,12 @@ apt_packages:
   - libjpeg-turbo-progs
   - nautilus-dropbox
   - pngcrush
+  - python-actdiag
   - python-apt
+  - python-blockdiag
+  - python-nwdiag
   - python-pip
+  - python-seqdiag
   - rbenv
   - ruby
   - ruby-build
