@@ -2,6 +2,8 @@ apt_packages:
   - ack-grep
   - apt-cacher-ng
   - apt-show-versions
+  - audispd-plugins
+  - auditd
   - autojump
   - boxes
   - build-essential
