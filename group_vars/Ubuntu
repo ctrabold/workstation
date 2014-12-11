@@ -8,6 +8,7 @@ apt_packages:
   - boxes
   - build-essential
   - clipit
+  - cracklib
   - curl
   - ditaa
   - enigmail
@@ -24,6 +25,7 @@ apt_packages:
   - lynis
   - nautilus-dropbox
   - oping
+  - passwdqc
   - pngcrush
   - python-actdiag
   - python-apt
