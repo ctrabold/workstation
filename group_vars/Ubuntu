@@ -43,6 +43,8 @@ apt_packages:
   - tmux
   - tree
   - unattended-upgrades
+  - unhide
+  - unhide.rb
   - vim
   - xclip
   - zim
