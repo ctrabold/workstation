@@ -1,0 +1,7 @@
+---
+#
+# Configuration of security related tools
+#
+
+#  lynis --auditor "Christian Trabold" --check-all --no-log --quick [--quiet]
+# Download sslyze
