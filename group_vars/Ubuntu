@@ -23,6 +23,7 @@ apt_packages:
   - libjpeg-turbo-progs
   - lynis
   - nautilus-dropbox
+  - oping
   - pngcrush
   - python-actdiag
   - python-apt
