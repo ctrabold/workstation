@@ -1,4 +1,5 @@
 ---
+# TODO Install zim from zim_0.62_all.deb?
 - name: Install packages (e.g. for plugins)
   apt: pkg={{ item }} state=installed
   with_items:
