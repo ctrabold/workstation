@@ -1,0 +1,21 @@
+---
+- name: Install packages (e.g. for plugins)
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - ditaa
+    - graphviz
+    - gtkspell
+    - python-actdiag
+    - python-blockdiag
+    - python-nwdiag
+    - python-seqdiag
+    - scrot
+    - zim
+
+- name: Create plugins folder
+  file: name=/usr/share/zim/plugins state=directory
+
+#- name: Load plugins
+# get_url:
+# with_items:
+#   - autocompletion.py

@@ -1,0 +1,9 @@
+[NotebookList]
+Default=
+1=~/Dropbox/Apps/Notes
+
+[Notebook 1]
+uri=~/Dropbox/Apps/Notes
+name=Notes
+interwiki=None
+icon=None
