@@ -25,6 +25,7 @@ apt_packages:
   - nautilus-dropbox
   - oping
   - passwdqc
+  - phatch
   - pngcrush
   - python-apt
   - python-pip
@@ -39,6 +40,7 @@ apt_packages:
   - tmux
   - tree
   - trimage
+fixup 5a2c709 fixup! hubot: Add `phpdoc.coffee` plugin
   - unattended-upgrades
   - unhide
   - unhide.rb
