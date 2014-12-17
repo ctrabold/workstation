@@ -38,6 +38,7 @@ apt_packages:
   - tig
   - tmux
   - tree
+  - trimage
   - unattended-upgrades
   - unhide
   - unhide.rb
