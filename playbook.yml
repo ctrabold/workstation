@@ -1,30 +1,8 @@
 ---
 - hosts: all
   gather_facts: true
-  tasks:
-    - group_by: key={{ ansible_distribution }}
-    - include: tasks/workspace.yml tags=base
-    #- include: tasks/zsh.yml tags=zsh
-    - include: tasks/ruby.yml tags=ruby
-    #- include: tasks/vim.yml tags=vim
-    - include: tasks/dotfiles.yml tags=dotfiles
-    #- include: tasks/fonts.yml tags=base
-    #- include: tasks/ssh_key.yml tags=base
+  - include: darwin.yml
+    when:
+  - include: ubuntu.yml
   post_tasks:
     - debug: msg="Setup finished on {{ ansible_hostname }} running for {{ username }}. Have a good time!"
-
-- hosts: Darwin
-  tasks:
-    - include: tasks/homebrew.yml tags=homebrew
-
-- hosts: Ubuntu
-  tasks:
-    - include: tasks/phantomjs.yml tags=phantomjs
-    - include: tasks/firefox.yml tags=firefox
-    #- include: tasks/thunderbird.yml tags=thunderbird
-    - include: tasks/packer.yml tags=packer
-    - include: tasks/packages_apt.yml tags=apt
-    - include: tasks/r-lang.yml
-  handlers:
-    - name: restart apt-cacher
-      service: name=apt-cacher-ng state=restarted
