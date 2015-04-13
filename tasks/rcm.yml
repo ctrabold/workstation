@@ -1,0 +1,4 @@
+---
+
+- homebrew_tap: tap=thoughtbot/formulae state=present
+- homebrew: name=rcm state=present
