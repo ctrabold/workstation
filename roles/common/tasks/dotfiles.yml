@@ -1,0 +1,11 @@
+---
+- name: Check dotfiles are installed
+  stat: path={{ dotfiles_dir}}
+  register: dotfiles_installed
+
+- name: Check out dotfiles repo
+  git: repo=git@github.com:ctrabold/dotfiles.git dest={{ dotfiles_dir }}
+  when: dotfiles_installed.stat.exists == false
+
+- name: Apply dotfiles
+  shell: rcup -f -t {{ ansible_os_family | lower }}

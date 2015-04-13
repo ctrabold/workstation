@@ -1,0 +1,23 @@
+---
+# API Document Browser like Dash on Ubuntu
+#
+# @see http://askubuntu.com/questions/154020/is-there-any-api-document-browser-like-dash-on-ubuntu
+# @see http://zealdocs.org/usage.html
+
+# NOTE: Zeal depends on Qt5, so for Ubuntu versions older than 14.04 (Trusty), Ubuntu SDK must be added as well:
+# @see https://launchpad.net/~jerzy-kozera/+archive/zeal-ppa
+- name: Packages | zeal | register SDK PPA for older ubuntus
+  sudo: True
+  apt_repository: repo='ppa:ubuntu-sdk-team/ppa' state=present
+  when: ansible_lsb.major_release|int < 14
+  tags: zeal
+
+- name: Packages | zeal | register zeal PPA
+  sudo: True
+  apt_repository: repo='ppa:jerzy-kozera/zeal-ppa' state=present update_cache=true
+  tags: zeal
+
+- name: Packages | zeal | Install zeal
+  sudo: True
+  apt: pkg=zeal state=present
+  tags: zeal

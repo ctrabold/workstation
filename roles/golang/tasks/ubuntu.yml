@@ -1,0 +1,4 @@
+---
+#wget https://storage.googleapis.com/golang/go1.2.2.linux-amd64.tar.gz
+#tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
+#sudo chmod -R og+xr /usr/local/go

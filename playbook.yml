@@ -1,8 +1,24 @@
 ---
 - hosts: all
   gather_facts: true
-  - include: darwin.yml
-    when:
-  - include: ubuntu.yml
+  tasks:
+     - group_by: key={{ ansible_system }}
+  roles:
+    - role: common
+    - role: dash
+    - role: docker
+    - role: firefox
+    - role: flux
+    - role: fonts
+    - role: golang
+    - role: keepass
+    - role: nvalt
+    - role: phantomjs
+    - role: rlang
+    - role: security
+    - role: sublimetext
+    - role: thunderbird
+    - role: zim
+
   post_tasks:
     - debug: msg="Setup finished on {{ ansible_hostname }} running for {{ username }}. Have a good time!"

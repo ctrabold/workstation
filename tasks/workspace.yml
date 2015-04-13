@@ -1,3 +1,0 @@
----
-- name: Create workspace directory
-  file: path=/home/{{ username }}/workspace owner={{ username }} state=directory

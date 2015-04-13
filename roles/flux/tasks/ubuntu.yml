@@ -1,0 +1,14 @@
+---
+# f.lux makes the color of your computer's display adapt to the time of day
+# warm at night and like sunlight during the day.
+#
+# @see https://justgetflux.com/
+- name: Packages | flux | register f.lux PPA
+  sudo: True
+  apt_repository: repo='ppa:kilian/f.lux' state=present update_cache=true
+  tags: flux
+
+- name: Packages | flux | Install fluxgui
+  sudo: True
+  apt: pkg=fluxgui state=present
+  tags: flux

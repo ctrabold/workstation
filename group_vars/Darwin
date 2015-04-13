@@ -2,10 +2,10 @@ applications:
   - adium
   - alfred
   - appcleaner
+  - clipmenu
   - cord
   - dropbox
   - firefox
-  - flux
   - freemind
   - gephi
   - google-drive
@@ -43,6 +43,7 @@ brews:
   - docker
   - elixir
   - ffmpeg
+  - git
   - git-extras
   - graphviz
   - htop
@@ -50,11 +51,14 @@ brews:
   - imagemagick
   - ios-webkit-debug-proxy
   - jenkins-lts
+  - lynis
+  - nodejs
   - parallel
   - phantomjs
   - pwgen
   - rbenv
   - rbenv-gem-rehash
+  - rcm
   - rename
   - rsync
   - ruby-install

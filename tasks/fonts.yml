@@ -1,7 +1,0 @@
----
-
-- include: "fonts_darwin.yml"
-  when: ansible_distribution == "Darwin"
-
-- include: "fonts_ubuntu.yml"
-  when: ansible_distribution == "Ubuntu"

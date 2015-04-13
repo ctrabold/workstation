@@ -1,3 +1,0 @@
----
-- name: SSH | Generate key
-  user: name=ctrabold generate_ssh_key=yes ssh_key_bits=2048 ssh_key_file=.ssh/{{ ssh_private_key_name }}

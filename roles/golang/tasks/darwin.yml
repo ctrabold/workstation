@@ -1,0 +1,5 @@
+---
+- name: Install package(s)
+  homebrew: name={{ item }} state=present
+  with_items:
+    - go

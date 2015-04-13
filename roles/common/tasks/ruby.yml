@@ -1,0 +1,49 @@
+---
+- name: Install rbenv repo
+  git: repo=https://github.com/sstephenson/rbenv.git dest={{ home_dir }}/.rbenv
+
+- name: Install rbenv plugins
+  git: repo=https://github.com/sstephenson/{{ item }}.git dest={{ home_dir }}/.rbenv/plugins/{{ item }} update=no
+  with_items:
+    - ruby-build
+    - rbenv-gem-rehash
+
+  # Ubuntu only
+  #
+  # INFO This is for gems that need to be compiled
+  # like `nokogiri` and friends.
+- name: Install ruby packages for compiling gems
+  sudo: True
+  apt: pkg={{item}} state=installed
+  when: ansible_os_family == "Ubuntu"
+  with_items:
+    - autoconf
+    - bison
+    - build-essential
+    - libopenssl-ruby
+    - libreadline6
+    - libreadline6-dev
+    - libssl-dev
+    - libxml2-dev
+    - libxslt-dev
+    - libyaml-dev
+    - openssl
+    - zlib1g
+    - zlib1g-dev
+
+- name: Install ruby versions
+  command: rbenv install {{ item }} --skip-existing creates={{ home_dir }}/.rbenv/versions/{{ item }}
+  with_items:
+    - 2.1.0
+
+- name: Set global ruby versions
+  command: rbenv global 2.1.0
+
+- name: Install gems
+  gem: name={{ item }} state=present
+  with_items:
+    - bundler
+    - fpm
+    - lolcommits
+    - middleman
+    - showoff

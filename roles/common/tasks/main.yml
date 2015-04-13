@@ -1,2 +1,26 @@
 ---
-# tasks file for common
+- name: Create workspace directory
+  file: path={{ home_dir }}/workspace owner={{ username }} state=directory
+
+# - name: Generate SSH key
+#   user: name=ctrabold
+#         generate_ssh_key=yes
+#         ssh_key_bits=2048
+#         ssh_key_file=.ssh/{{ ssh_private_key_name }}
+#        ssh_key_passphrase={{ ssh_private_key_passphrase }}
+
+
+#
+# PACKAGES
+#
+- include: "darwin.yml"
+  when: ansible_os_family == "Darwin"
+
+- include: "ubuntu.yml"
+  when: ansible_os_family == "Ubuntu"
+
+- include: ruby.yml
+- include: zsh.yml
+- include: vim.yml
+- include: dotfiles.yml
+- include: seqdiag.yml

@@ -1,0 +1,63 @@
+---
+- name: Packages | misc | Install utilities
+  sudo: True
+  apt: pkg={{ item }} state=installed
+  with_items: apt_packages
+  tags: packages
+
+
+#
+# Setup apt-cacher
+# @see http://serverascode.com/2013/11/16/apt-cacher-ng.html
+#
+- name: Packages | apt-cacher-ng | Register proxy for apt-get
+  sudo: true
+  template: src=templates/01proxy dest=/etc/apt/apt.conf.d/01proxy
+  tags: apt-cacher
+
+- name: Add
+  sudo: true
+  lineinfile: dest=/etc/apt-cacher-ng/acng.conf line='BindAddress:localhost {{ ansible_default_ipv4.address }} publicNameOnMainInterface'
+  notify:
+    - restart apt-cacher
+  tags: apt-cacher
+
+
+#
+# Keyboard layout
+#
+- name: Settings | Check current layout
+  shell: cat /etc/default/keyboard
+  register: get_layout
+  tags: keyboard
+
+- name: Settings | Set keyboard layout
+  sudo: true
+  template: src=templates/keyboard dest=/etc/default/keyboard
+  tags: keyboard
+
+- name: Settings | Enable keyboard layout
+  sudo: true
+  command: dpkg-reconfigure -f noninteractive keyboard-configuration
+  when: get_layout.stdout.find('ctrl:nocaps') == false
+  tags: keyboard
+
+
+# RCM dotfile management
+#
+# @see https://thoughtbot.github.io/rcm/
+- name: Packages | rcm | Check if rcm is installed
+  stat: path=/usr/bin/rcup
+  register: rcm_installed
+  tags: rcm
+
+- name: Packages | rcm | Download rcm package
+  get_url: url=https://thoughtbot.github.io/rcm/debs/rcm_1.2.2-2_all.deb dest=/tmp/rcm_1.2.2-2_all.deb sha256sum=6cbc6d74f38786989c5780da84d261ff362afa161f70f63a386307e4838b3839
+  when: rcm_installed.stat.exists == false
+  tags: rcm
+
+- name: Packages | rcm | Installs rcm package
+  sudo: True
+  apt: deb=/tmp/rcm_1.2.2-2_all.deb state=installed
+  when: rcm_installed.stat.exists == false
+  tags: rcm

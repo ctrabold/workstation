@@ -1,0 +1,9 @@
+---
+- name: Install linux headers
+  sudo: True
+  apt: pkg={{item}} state=installed
+  with_items:
+    - linux-image-extra-`uname -r`
+    - docker-io
+
+# wget -qO- https://get.docker.io/ | sh

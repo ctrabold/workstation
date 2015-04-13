@@ -19,9 +19,12 @@ apt_packages:
   - git-core
   - git-extras
   - htop
+  - imagemagick
   - keepass2
   - libjpeg-turbo-progs
+  - libmagickwand-dev
   - lynis
+  - mplayer
   - nautilus-dropbox
   - oping
   - passwdqc
@@ -40,7 +43,6 @@ apt_packages:
   - tmux
   - tree
   - trimage
-fixup 5a2c709 fixup! hubot: Add `phpdoc.coffee` plugin
   - unattended-upgrades
   - unhide
   - unhide.rb

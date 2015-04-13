@@ -1,2 +1,73 @@
 ---
-# defaults file for common
+applications:
+  - adium
+  - alfred
+  - appcleaner
+  - clipmenu
+  - cord
+  - dropbox
+  - firefox
+  - freemind
+  - gephi
+  - google-drive
+  - google-hangouts
+  - google-refine
+  - gpgtools
+  - handbrake
+  - imageoptim
+  - iterm2
+  - java
+  - kaleidoscope
+  - kdiff3
+  - keepassx
+  - libreoffice
+  - mou
+  - nvalt
+  - owasp-zap
+  - packer
+  - pandoc
+  - phoenix
+  - sequel-pro
+  - sublime-text3
+  - teamviewer
+  - the-unarchiver
+  - tunnelblick
+  - typinator
+  - vagrant
+  - virtualbox
+application_dir: /Applications
+brews:
+  - ack
+  - autojump
+  - boot2docker
+  - chromedriver
+  - docker
+  - elixir
+  - ffmpeg
+  - git
+  - git-extras
+  - graphviz
+  - htop
+  - hub
+  - imagemagick
+  - ios-webkit-debug-proxy
+  - jenkins-lts
+  - lynis
+  - nodejs
+  - parallel
+  - phantomjs
+  - pwgen
+  - rbenv
+  - rbenv-gem-rehash
+  - rcm
+  - rename
+  - rsync
+  - ruby-install
+  - tesseract
+  - tig
+  - tmux
+  - tree
+  - vim
+  - wget
+  - zsh
+caskroom_dir: /usr/local/caskroom

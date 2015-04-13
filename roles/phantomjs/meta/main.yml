@@ -1,0 +1,16 @@
+---
+galaxy_info:
+  author: Christian Trabold
+  description: Installs/Configures phantomjs settings
+  company: Christian Trabold
+  license: MIT
+  min_ansible_version: 1.6
+  platforms:
+    - name: Ubuntu
+      versions:
+        - raring
+        - saucy
+        - trusty
+  categories:
+    - system
+dependencies: []
