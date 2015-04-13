@@ -7,12 +7,13 @@
   shell: ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
   when: brew_installed.stat.exists == false
 
-- name: Tap homebrew/dupes
-  shell: brew tap homebrew/dupes
-
-- name: Install Homebrew libraries
-  homebrew: name={{ item }} state=present
-  with_items: brews
+- name: Install homebrew taps
+  shell: brew tap {{ item }}
+  with_items:
+    - caskroom/versions
+    - homebrew/binary
+    - homebrew/dupes
+    - homebrew/versions
 
 - name: Check rcm is installed
   stat: path=/usr/local/bin/rcup
@@ -43,3 +44,7 @@
 
 - name: Modify alfred scope to include caskroom
   shell: brew cask alfred link --appdir={{ application_dir }} --caskroom={{ caskroom_dir }}
+
+- name: Install Homebrew libraries
+  homebrew: name={{ item }} state=present
+  with_items: brews
