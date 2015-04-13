@@ -2,17 +2,12 @@ applications:
   - adium
   - alfred
   - appcleaner
-  - atmonitor
-  - ccmenu
-  - charles
   - cord
   - dropbox
   - firefox
   - flux
   - freemind
   - gephi
-  - github
-  - google-chrome
   - google-drive
   - google-hangouts
   - google-refine
@@ -20,17 +15,19 @@ applications:
   - handbrake
   - imageoptim
   - iterm2
+  - java
   - kaleidoscope
   - kdiff3
   - keepassx
   - libreoffice
   - mou
   - nvalt
-  - onepassword
   - owasp-zap
+  - packer
   - pandoc
+  - phoenix
   - sequel-pro
-  - sublime-text
+  - sublime-text3
   - teamviewer
   - the-unarchiver
   - tunnelblick
@@ -40,21 +37,18 @@ applications:
 application_dir: /Applications
 brews:
   - ack
+  - autojump
+  - boot2docker
   - chromedriver
   - docker
-  - hub
-  - ios-webkit-debug-proxy
-  - rsync
-  - zsh
-  - autojump
-  - cclive
+  - elixir
   - ffmpeg
   - git-extras
   - graphviz
-  # @see https://gist.github.com/jimbojsb/1630790
-  - highlight
   - htop
+  - hub
   - imagemagick
+  - ios-webkit-debug-proxy
   - jenkins-lts
   - parallel
   - phantomjs
@@ -62,6 +56,7 @@ brews:
   - rbenv
   - rbenv-gem-rehash
   - rename
+  - rsync
   - ruby-install
   - tesseract
   - tig
@@ -69,4 +64,5 @@ brews:
   - tree
   - vim
   - wget
+  - zsh
 caskroom_dir: /usr/local/caskroom
