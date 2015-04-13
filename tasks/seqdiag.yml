@@ -1,0 +1,12 @@
+---
+- easy_install: name=pip
+  sudo: yes
+
+- name: Install pip packages
+  sudo: True
+  pip: name={{ item }} state=present
+  with_items:
+    - actdiag
+    - blockdiag
+    - nwdiag
+    - seqdiag
