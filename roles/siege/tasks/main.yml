@@ -1,0 +1,6 @@
+---
+- name: Install packages
+  apt: pkg=siege state=installed
+
+#- copy: /etc/siege/siegerc
+#- copy: /etc/siege/urls.txt
