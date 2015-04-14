@@ -1,16 +1,10 @@
 ---
+# @see https://github.com/caskroom/homebrew-fonts
 - name: Check caskroom-fonts is installed
-  command: brew tap | grep caskroom/fonts
-  register: brew_cask_fonts_installed
-  ignore_errors: true
-
-  # @see https://github.com/caskroom/homebrew-fonts
-- name: Install caskroom-fonts
-  shell: brew tap caskroom/fonts
-  when: brew_cask_fonts_installed|failed
+  homebrew_tap: tap=caskroom/fonts state=present
 
 - name: Install fonts
-  command: brew cask install {{ item }}
+  homebrew_cask: name={{ item }} state=present
   with_items:
     - font-inconsolata-dz-for-powerline
     - font-inconsolata
