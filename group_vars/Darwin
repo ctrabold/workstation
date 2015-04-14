@@ -31,7 +31,7 @@ applications:
   - teamviewer
   - the-unarchiver
   - tunnelblick
-  - typinator
+#  - typinator # This installs the latest version, wee need 5.9
   - vagrant
   - virtualbox
 application_dir: /Applications
