@@ -33,6 +33,7 @@ applications:
   - the-unarchiver
   - tunnelblick
   - typinator
+  - utorrent
   - vagrant
   - virtualbox
 application_dir: /Applications
