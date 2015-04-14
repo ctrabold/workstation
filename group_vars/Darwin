@@ -33,6 +33,7 @@ applications:
   - tunnelblick
 #  - typinator # This installs the latest version, wee need 5.9
   - vagrant
+  - vlc
   - virtualbox
 application_dir: /Applications
 brews:
