@@ -16,6 +16,7 @@
     - role: phantomjs
     - role: rlang
     - role: security
+    - role: lynis
     - role: sublimetext
     - role: thunderbird
     - role: zim

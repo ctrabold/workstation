@@ -1,0 +1,34 @@
+---
+# INFO The package version is too old -> too many false positives
+- name: Install packages
+  apt: pkg=lynis state=removed
+  when: ansible_os_family == "Ubuntu"
+
+# Download latest version (checksum)
+- name: Download files
+  sudo: yes
+  get_url: url=https://cisofy.com/files/lynis-{{ lynis_version }}.tar.gz
+           dest=/opt/lynis-{{ lynis_version }}.tar.gz
+           sha256sum={{ lynis_sha256sum }}
+           mode=0440
+
+- name: Unpack package
+  sudo: yes
+  unarchive: src=/opt/lynis-{{ lynis_version }}.tar.gz
+             dest=/opt/
+             copy=no
+             creates=/opt/lynis
+
+# - name: Symlink recent version
+#   sudo: yes
+#   file: src=/opt/lynis-{{ lynis_version }}
+#         dest=/opt/lynis
+#         state=link
+
+- name: Run system checks every day
+  cron: name="run lynis"
+        user={{ username }}
+        hour="0"
+        job="/opt/lynis/lynis --check-all --no-log --cronjob"
+        state=present
+  when: ansible_os_family == "Ubuntu"
