@@ -1,0 +1,6 @@
+---
+- name: Copy script
+  copy: src=yslow.js
+        dest={{ home_dir }}/bin/
+        owner=foo{{ username }}
+        mode=0644
