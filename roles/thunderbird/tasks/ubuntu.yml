@@ -1,0 +1,12 @@
+---
+# Start thunderbird with profile manager:
+#
+#  thunderbird -ProfileManager
+#
+# Create `user.js` file inside the user profile folder
+- name: thunderbird | Get profile directory
+  shell: ls -1 -d {{home_dir}}/.thunderbird/*.default
+  register: thunderbird_profile_dir
+
+- name: thunderbird | Set user preferences
+  copy: src=templates/thunderbird_user.js dest={{ thunderbird_profile_dir.stdout }}/user.js
