@@ -1,2 +1,6 @@
 ---
-# defaults file for security
+security_packages:
+  - chkrootkit # Outdated?
+  - rkhunter
+  - unattended-upgrades
+  - nss-myhostname

@@ -1,0 +1,4 @@
+---
+- name: Install packages
+  apt: pkg={{ item }} state=installed
+  with_items: security_packages
