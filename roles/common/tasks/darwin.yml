@@ -33,3 +33,6 @@
 
 - name: Cleanup 'homebrew'
   command: brew prune && brew cleanup && brew tap --repair
+
+- name: Cleanup dock
+  command: dockutil --remove all

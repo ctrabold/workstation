@@ -42,6 +42,7 @@ brews:
   - boot2docker
   - chromedriver
   - docker
+  - dockutil
   - elixir
   - ffmpeg
   - git
