@@ -20,6 +20,7 @@ applications:
   - kdiff3
   - keepassx
   - libreoffice
+  - moom
   - mou
   - nvalt
   - owasp-zap
