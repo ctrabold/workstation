@@ -54,6 +54,7 @@ brews:
   - imagemagick
   - ios-webkit-debug-proxy
   - jenkins-lts
+  - jq
   - lynis
   - nodejs
   - parallel
@@ -66,8 +67,10 @@ brews:
   - rsync
   - ruby-install
   - tesseract
+  - tidy-html5
   - tig
   - tmux
+  - tmux-cssh
   - tree
   - vim
   - wget
