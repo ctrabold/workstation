@@ -66,6 +66,7 @@ brews:
   - rename
   - rsync
   - ruby-install
+  - sslyze
   - tesseract
   - tidy-html5
   - tig
