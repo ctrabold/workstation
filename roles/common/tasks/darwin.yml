@@ -34,5 +34,15 @@
 - name: Cleanup 'homebrew'
   command: brew prune && brew cleanup && brew tap --repair
 
+- name: Write launch agent config for updating homebrew automatically
+  copy: src=homebrew.update.plist dest={{ home_dir }}/Library/LaunchAgents
+        mode=0755
+
+- name: Load launchagent config
+  command: launchctl load {{ home_dir }}/Library/LaunchAgents/homebrew.update.plist
+
+- name: Start homebrew update lauch agent
+  command: launchctl start homebrew.update
+
 - name: Cleanup dock
   command: dockutil --remove all
