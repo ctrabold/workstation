@@ -41,6 +41,7 @@ application_dir: /Applications
 brews:
   - ack
   - autojump
+  - bats
   - boot2docker
   - chromedriver
   - docker
