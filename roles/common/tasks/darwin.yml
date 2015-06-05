@@ -27,6 +27,21 @@
   with_items: applications
   ignore_errors: yes
 
+
+- name: Install quicklook plugins with brew-cask (https://github.com/sindresorhus/quick-look-plugins)
+  homebrew_cask: name={{ item }} state=installed
+  with_items:
+    - qlcolorcode
+    - qlstephen
+    - qlmarkdown
+    - quicklook-json
+    - qlprettypatch
+    - quicklook-csv
+    - betterzipql
+    - qlimagesize
+    - webpquicklook
+    - suspicious-package
+
 - name: Install 'homebrew' libraries
   homebrew: name={{ item }} state=present
   with_items: brews
