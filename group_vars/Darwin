@@ -45,6 +45,7 @@ brews:
   - bats
   - boot2docker
   - chromedriver
+  - cmake
   - docker
   - dockutil
   - elixir
@@ -54,6 +55,7 @@ brews:
   - graphviz
   - htop
   - hub
+  - icu4c
   - imagemagick
   - ios-webkit-debug-proxy
   - jenkins-lts
@@ -62,6 +64,7 @@ brews:
   - nodejs
   - parallel
   - phantomjs
+  - pkg-config
   - pwgen
   - rbenv
   - rbenv-gem-rehash
