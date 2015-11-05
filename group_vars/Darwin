@@ -1,6 +1,7 @@
 applications:
   - adium
   - alfred
+  - atom
   - appcleaner
   - clipmenu
   - cord
@@ -30,7 +31,6 @@ applications:
   - pandoc
   - phoenix
   - sequel-pro
-  - sublime-text3
   - teamviewer
   - the-unarchiver
   - tunnelblick
