@@ -3,6 +3,7 @@ applications:
   - alfred
   - atom
   - appcleaner
+  - audacity
   - clipmenu
   - cord
   - dropbox
@@ -29,8 +30,10 @@ applications:
   - owasp-zap
   - packer
   - pandoc
+  - pencil
   - phoenix
   - sequel-pro
+  - sweet-home3d
   - teamviewer
   - the-unarchiver
   - tunnelblick
@@ -38,12 +41,14 @@ applications:
   - vagrant
   - vlc
   - virtualbox
+  - xquartz
 application_dir: /Applications
 brews:
   - ack
   - autojump
   - bats
   - boot2docker
+  - chkrootkit
   - chromedriver
   - cmake
   - docker
@@ -66,10 +71,12 @@ brews:
   - phantomjs
   - pkg-config
   - pwgen
+  - saltstack
   - rbenv
   - rbenv-gem-rehash
   - rcm
   - rename
+  - rkhunter
   - rsync
   - ruby-install
   - sslyze
@@ -81,5 +88,6 @@ brews:
   - tree
   - vim
   - wget
+  - zim
   - zsh
 caskroom_dir: /usr/local/caskroom
