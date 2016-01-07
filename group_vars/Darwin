@@ -90,4 +90,3 @@ brews:
   - wget
   - zim
   - zsh
-caskroom_dir: /usr/local/caskroom

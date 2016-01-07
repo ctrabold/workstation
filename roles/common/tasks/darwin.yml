@@ -7,15 +7,9 @@
   shell: ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
   when: brew_installed.stat.exists == false
 
-- name: Remove outdated homebrew taps
-  homebrew_tap: tap={{ item }} state=absent
-  with_items:
-    - phinze/cask
-
 - name: Install homebrew taps
   homebrew_tap: tap={{ item }} state=present
   with_items:
-    - caskroom/cask
     - caskroom/versions
     - homebrew/binary
     - homebrew/dupes
@@ -26,7 +20,6 @@
   homebrew_cask: name={{ item }} state=installed
   with_items: applications
   ignore_errors: yes
-
 
 - name: Install quicklook plugins with brew-cask (https://github.com/sindresorhus/quick-look-plugins)
   homebrew_cask: name={{ item }} state=installed
