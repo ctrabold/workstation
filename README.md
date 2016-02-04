@@ -4,6 +4,7 @@ I use this repo to document my experience with [Ansible](http://www.ansible.com/
 
 Use at your own risk. Hope you find it useful too.
 
+[![Build Status](https://travis-ci.org/ctrabold/workstation.svg?branch=master)](https://travis-ci.org/ctrabold/workstation)
 
 # Installation
 
