@@ -1,0 +1,12 @@
+---
+- name: Install package(s)
+  homebrew: name={{ item }} state=present
+  with_items:
+    - golang
+  when: ansible_os_family == "Darwin"
+
+- name: Install package(s)
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - golang
+ when: ansible_os_family == "Ubuntu"

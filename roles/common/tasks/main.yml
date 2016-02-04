@@ -19,8 +19,6 @@
 - include: "ubuntu.yml"
   when: ansible_os_family == "Ubuntu"
 
-- include: ruby.yml
 - include: zsh.yml
 - include: vim.yml
 - include: dotfiles.yml
-- include: seqdiag.yml
