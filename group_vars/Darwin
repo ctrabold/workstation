@@ -4,12 +4,16 @@ applications:
   - atom
   - appcleaner
   - audacity
+  - caffeine
   - clipmenu
   - cord
+  - dash
   - dropbox
   - firefox
   - freemind
+  - fuze
   - gephi
+  - gif-for-mac
   - google-drive
   - google-hangouts
   - google-refine
@@ -18,23 +22,21 @@ applications:
   - imageoptim
   - iterm2
   - java
-  - kaleidoscope
   - kdiff3
   - keepassx
   - launchcontrol
   - libreoffice
   - limechat
   - moom
-  - mou
   - nvalt
   - owasp-zap
   - packer
   - pandoc
   - pencil
-  - phoenix
   - sequel-pro
   - sweet-home3d
   - teamviewer
+  - telegram
   - the-unarchiver
   - tunnelblick
 #  - typinator # This installs the latest version, wee need 5.9
@@ -42,7 +44,6 @@ applications:
   - vlc
   - virtualbox
   - xquartz
-application_dir: /Applications
 brews:
   - ack
   - autojump
@@ -51,9 +52,11 @@ brews:
   - chkrootkit
   - chromedriver
   - cmake
+  - dlite
   - docker
   - dockutil
   - elixir
+  - emacs
   - ffmpeg
   - git
   - git-extras
@@ -79,6 +82,8 @@ brews:
   - rkhunter
   - rsync
   - ruby-install
+  - shellcheck
+  - source-highlight
   - sslyze
   - tesseract
   - tidy-html5
