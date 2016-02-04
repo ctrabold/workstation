@@ -95,3 +95,5 @@ homebrew_packages:
   - wget
   - zim
   - zsh
+pip_packages:
+  - dpxdt # comparing screenshots before and after each release
