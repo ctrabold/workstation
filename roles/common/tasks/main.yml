@@ -1,6 +1,8 @@
 ---
 - name: Create workspace directory
-  file: path={{ home_dir }}/workspace owner={{ username }} state=directory
+  file: path={{ home_dir }}/workspace
+        owner={{ username }}
+        state=directory
 
 # - name: Generate SSH key
 #   user: name=ctrabold
@@ -10,9 +12,7 @@
 #        ssh_key_passphrase={{ ssh_private_key_passphrase }}
 
 
-#
 # PACKAGES
-#
 - include: "darwin.yml"
   when: ansible_os_family == "Darwin"
 

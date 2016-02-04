@@ -48,7 +48,7 @@
 - name: Cleanup dock
   command: dockutil --remove all
 
-# Fonts
+# FONTS
 # @see https://github.com/caskroom/homebrew-fonts
 - name: Check caskroom-fonts is installed
   homebrew_tap: tap=caskroom/fonts state=present

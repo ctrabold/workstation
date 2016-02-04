@@ -4,7 +4,8 @@
   register: dotfiles_installed
 
 - name: Check out dotfiles repo
-  git: repo=git@github.com:ctrabold/dotfiles.git dest={{ dotfiles_dir }}
+  git: repo=git@github.com:ctrabold/dotfiles.git
+       dest={{ dotfiles_dir }}
   when: dotfiles_installed.stat.exists == false
 
 - name: Apply dotfiles

@@ -6,10 +6,8 @@
   tags: packages
 
 
-#
 # Setup apt-cacher
 # @see http://serverascode.com/2013/11/16/apt-cacher-ng.html
-#
 - name: Packages | apt-cacher-ng | Register proxy for apt-get
   sudo: true
   template: src=templates/01proxy dest=/etc/apt/apt.conf.d/01proxy
@@ -23,9 +21,7 @@
   tags: apt-cacher
 
 
-#
 # Keyboard layout
-#
 - name: Settings | Check current layout
   shell: cat /etc/default/keyboard
   register: get_layout
@@ -44,7 +40,6 @@
 
 
 # RCM dotfile management
-#
 # @see https://thoughtbot.github.io/rcm/
 - name: Packages | rcm | Check if rcm is installed
   stat: path=/usr/bin/rcup
@@ -62,7 +57,7 @@
   when: rcm_installed.stat.exists == false
   tags: rcm
 
-# Fonts
+# FONTS
 - name: Fonts | Download powerline repository
   git: repo=https://github.com/Lokaltog/powerline-fonts.git dest={{ home_dir }}/workspace/powerline-fonts update=no
   tags: fonts

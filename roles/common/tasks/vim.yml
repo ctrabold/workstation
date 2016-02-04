@@ -1,12 +1,19 @@
 ---
 - name: Vim | Install janus
-  git: repo=https://github.com/carlhuda/janus.git dest={{ home_dir }}/.vim force=yes
+  git: repo=https://github.com/carlhuda/janus.git
+       dest={{ home_dir }}/.vim
+       force=yes
 
 - name: Vim | Install janus sub modules
-  command: rake creates={{ home_dir }}/.janus chdir={{ home_dir }}/.vim
+  command: rake
+           creates={{ home_dir }}/.janus
+           chdir={{ home_dir }}/.vim
 
 - name: Create folder for janus plugins
-  file: path={{ home_dir }}/.janus owner={{ username }} mode=0755 state=directory
+  file: path={{ home_dir }}/.janus
+        owner={{ username }}
+        mode=0755
+        state=directory
 
 - name: Pull in vim plugins
   git: repo=git://github.com/{{ item.name }}/{{ item.repo }}.git
