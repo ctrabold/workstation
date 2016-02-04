@@ -2,5 +2,7 @@ os:
   - linux
   - osx
 
+install: true
+
 script:
-  - bootstrap.sh
+  - bash ./bootstrap.sh
