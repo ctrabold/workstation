@@ -1,30 +1,16 @@
-# workstation
+# Overview
 
-An approach to configure my dev workstation while learning [Ansible](http://www.ansible.com/). Very much WIP
+I use this repo to document my experience with [Ansible](http://www.ansible.com/) and tools I find useful.
 
-My goal is to reduce the manual steps when installing my Macbook and Ubuntu machine to a minimum.
-
-Because it's boring.
-
-I also use this repo to document my experience with [Ansible](http://www.ansible.com/).
-
-Because it's fun.
-
-
-# Important
-
-I use this repo to learn a new tool. Thus I consider the content unstable.
-
-Use at your own risk. Thanks!
+Use at your own risk. Hope you find it useful too.
 
 
 # Installation
 
-    cd
-    mkdir -p bin/
-    git clone git@github.com:ctrabold/workstation.git bin/setup
+    mkdir -p ~/bin/
+    git clone git@github.com:ctrabold/workstation.git ~/bin/setup
 
-    ./bin/setup/bootstrap.sh
+    ~/bin/setup/bootstrap.sh
 
     <provide sudo password>
     <watch ansible do his thing>
@@ -35,6 +21,7 @@ Use at your own risk. Thanks!
 Q: How do I see a list of all of the `ansible_` variables?<br>
 A: Run this command
 
+    cd ~/bin/setup
     ansible -m setup localhost -i hosts.ini
 
 Q: How to write good looking ansible code that is easy to maintain?<br>
@@ -42,22 +29,6 @@ A: https://github.com/edx/configuration/wiki/Ansible-Coding-Conventions
 
 Q: How can I manipulate variables?<br>
 A: http://jinja.pocoo.org/docs/templates/#builtin-filters
-
-
-# TODOs / ideas
-
-- How to handle App-Store Apps? AppleScript?
-- Check if `homebrew` is outdated
-- Fix `rubygems` install issues
-- Add more Apps / create custom casks
-<pre>
-iShowU_1.92.3.dmg
-Slowyapp_v1.2.dmg
-onthejob_3.0.6.zip
-ChimooTimer.dmg
-solarized.zip
-yslow-phantomjs-3.1.1.zip
-</pre>
 
 
 # Kudos
