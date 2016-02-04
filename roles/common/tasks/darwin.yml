@@ -10,7 +10,7 @@
 
 - name: Install apps with brew-cask
   homebrew_cask: name={{ item }} state=installed
-  with_items: applications
+  with_items: homebrew_casks
   ignore_errors: yes
 
 - name: Install quicklook plugins with brew-cask (https://github.com/sindresorhus/quick-look-plugins)
@@ -27,15 +27,16 @@
     - webpquicklook
     - suspicious-package
 
-- name: Install 'homebrew' libraries
+- name: Install 'homebrew' packages
   homebrew: name={{ item }} state=present
-  with_items: brews
+  with_items: homebrew_packages
 
 - name: Cleanup 'homebrew'
   command: brew prune && brew cleanup && brew tap --repair
 
 - name: Write launch agent config for updating homebrew automatically
-  copy: src=homebrew.update.plist dest={{ home_dir }}/Library/LaunchAgents
+  copy: src=homebrew.update.plist
+        dest={{ home_dir }}/Library/LaunchAgents
         mode=0755
 
 - name: Load launchagent config

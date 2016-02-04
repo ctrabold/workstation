@@ -1,4 +1,4 @@
-applications:
+homebrew_casks:
   - adium
   - alfred
   - atom
@@ -44,7 +44,7 @@ applications:
   - vlc
   - virtualbox
   - xquartz
-brews:
+homebrew_packages:
   - ack
   - autojump
   - bats
