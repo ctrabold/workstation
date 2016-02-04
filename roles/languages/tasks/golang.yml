@@ -1,4 +1,5 @@
 ---
+# INFO GOPATH is managed by `dotfiles` repo
 - name: Install package(s)
   homebrew: name={{ item }} state=present
   with_items:

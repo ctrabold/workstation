@@ -1,9 +1,12 @@
 ---
 - name: Install rbenv repo
-  git: repo=https://github.com/sstephenson/rbenv.git dest={{ home_dir }}/.rbenv
+  git: repo=https://github.com/sstephenson/rbenv.git
+       dest={{ home_dir }}/.rbenv
 
 - name: Install rbenv plugins
-  git: repo=https://github.com/sstephenson/{{ item }}.git dest={{ home_dir }}/.rbenv/plugins/{{ item }} update=no
+  git: repo=https://github.com/sstephenson/{{ item }}.git
+       dest={{ home_dir }}/.rbenv/plugins/{{ item }}
+       update=no
   with_items:
     - ruby-build
     - rbenv-gem-rehash
