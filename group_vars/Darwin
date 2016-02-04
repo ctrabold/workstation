@@ -43,6 +43,7 @@ homebrew_casks:
   - vagrant
   - vlc
   - virtualbox
+  - vault
   - xquartz
 homebrew_packages:
   - ack
