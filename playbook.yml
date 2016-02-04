@@ -5,18 +5,18 @@
      - group_by: key={{ ansible_system }}
   roles:
     - role: common
-    - role: languages
-    - role: dash
-    - role: docker
-    - role: firefox
-    - role: flux
-    - role: keepass
-    - role: nvalt
-    - role: phantomjs
-    - role: security
-    - role: lynis
-    - role: thunderbird
-    - role: zim
+#    - role: languages
+#    - role: dash
+#    - role: docker
+#    - role: firefox
+#    - role: flux
+#    - role: keepass
+#    - role: nvalt
+#    - role: phantomjs
+#    - role: pentesting
+#    - role: lynis
+#    - role: thunderbird
+#    - role: zim
 
   post_tasks:
     - debug: msg="Setup finished on {{ ansible_hostname }} running for {{ username }}. Have a good time!"
