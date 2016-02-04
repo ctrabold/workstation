@@ -11,6 +11,12 @@ else
   echo "Please install python first."
 fi
 
+if [[ `which brew` ]]; then
+  echo "OK Found homebrew!"
+else
+  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+fi
+
 # Installing most important package
 if [[ `which ansible` ]]; then
   echo "Ansible is already installed"
