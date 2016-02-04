@@ -1,0 +1,15 @@
+---
+# Installs `yslow` script that can be executed by phantomjs
+#
+# @see http://yslow.org/phantomjs/
+#
+# Example
+#
+#  echo "INFO execute yslow check..."
+#  FRONTEND_URL=http://example.com
+#  phantomjs ~/bin/yslow.js -i grade -threshold "F" --dict --console 2 -f tap ${FRONTEND_URL} > yslow.tap
+- name: Copy script
+  copy: src=yslow.js
+        dest={{ home_dir }}/bin/
+        owner=foo{{ username }}
+        mode=0644
