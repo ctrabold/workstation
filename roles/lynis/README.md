@@ -61,7 +61,7 @@ Main functions are
     ReportWarning
 
 They take parameters like --test-no (test number) CUST-0010
-The 'CUST-' prefix is mantandory ? for custom plugins.
+The 'CUST-' prefix is mandatory ? for custom plugins.
 
 TODO Clarify what the difference between 'plugins' and 'tests' are
 
