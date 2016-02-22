@@ -59,6 +59,7 @@ homebrew_packages:
   - elixir
   - emacs
   - ffmpeg
+  - gifify
   - git
   - git-extras
   - graphviz
