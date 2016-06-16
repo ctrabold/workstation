@@ -10,7 +10,7 @@
 
 - name: Install apps with brew-cask
   homebrew_cask: name={{ item }} state=installed
-  with_items: homebrew_casks
+  with_items: "{{ homebrew_casks }}"
   ignore_errors: yes
 
 - name: Install quicklook plugins with brew-cask (https://github.com/sindresorhus/quick-look-plugins)
@@ -29,7 +29,7 @@
 
 - name: Install 'homebrew' packages
   homebrew: name={{ item }} state=present
-  with_items: homebrew_packages
+  with_items: "{{ homebrew_packages }}"
 
 - name: Cleanup 'homebrew'
   command: brew prune && brew cleanup && brew tap --repair
