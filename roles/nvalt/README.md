@@ -1,11 +1,11 @@
 # Overview
 
-Installs and configures nvalt.
+Installs and configures nvalt on Ubuntu.
 
 
 ## Requirements
 
-none
+Ubuntu
 
 ## Role Variables
 

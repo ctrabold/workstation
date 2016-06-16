@@ -1,11 +1,11 @@
 # Overview
 
-Installs and configures phantomjs.
+Installs and configures phantomjs on Ubuntu.
 
 
 ## Requirements
 
-none
+Ubuntu
 
 ## Role Variables
 

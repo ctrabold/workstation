@@ -1,11 +1,11 @@
 # Overview
 
-Installs and configures keepass.
+Installs and configures keepass on Ubuntu.
 
 
 ## Requirements
 
-none
+Ubuntu
 
 ## Role Variables
 

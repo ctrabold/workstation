@@ -1,11 +1,12 @@
 # Overview
 
-Installs and configures thunderbird.
+Installs and configures thunderbird on Ubuntu.
 
+Please check the settings first before applying.
 
 ## Requirements
 
-none
+Ubuntu
 
 ## Role Variables
 

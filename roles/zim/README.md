@@ -1,11 +1,11 @@
 # Overview
 
-Installs and configures zim.
+Installs and configures zim on Ubuntu.
 
 
 ## Requirements
 
-none
+Ubuntu
 
 ## Role Variables
 

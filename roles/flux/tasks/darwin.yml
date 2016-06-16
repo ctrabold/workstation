@@ -1,5 +1,0 @@
----
-- name: Install package(s)
-  homebrew_cask: name={{ item }} state=present
-  with_items:
-    - flux

@@ -1,11 +1,11 @@
 # Overview
 
-Installs and configures dash.
+Installs and configures dash alternative on Ubuntu.
 
 
 ## Requirements
 
-none
+Ubuntu
 
 ## Role Variables
 

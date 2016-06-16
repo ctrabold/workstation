@@ -1,5 +1,0 @@
----
-- name: Install app
-  homebrew_cask: name={{ item }} state=present
-  with_items:
-    - keepassx

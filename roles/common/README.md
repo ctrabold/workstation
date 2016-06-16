@@ -1,11 +1,10 @@
 # Overview
 
-Installs and configures common.
-
+Installs common packages & sets up common settings for a workstation.
 
 ## Requirements
 
-none
+Mac OSX or Ubuntu
 
 ## Role Variables
 

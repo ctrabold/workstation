@@ -1,6 +1,6 @@
 ---
-- include: ruby.yml
 - include: golang.yml
+- include: python.yml
 - include: rlang.yml
   when: ansible_os_family == "Ubuntu"
-- include: seqdiag.yml
+- include: ruby.yml

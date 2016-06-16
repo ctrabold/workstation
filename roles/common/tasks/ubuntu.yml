@@ -2,7 +2,57 @@
 - name: Packages | misc | Install utilities
   sudo: True
   apt: pkg={{ item }} state=installed
-  with_items: apt_packages
+  with_items:
+    - ack-grep
+    - apt-cacher-ng
+    - apt-show-versions
+    - audispd-plugins
+    - auditd
+    - autojump
+    - boxes
+    - build-essential
+    - clipit
+    - cracklib
+    - curl
+    - enigmail
+    - exuberant-ctags
+    - fping
+    - freemind
+    - gifsicle
+    - git
+    - git-core
+    - git-extras
+    - htop
+    - imagemagick
+    - keepass2
+    - libjpeg-turbo-progs
+    - libmagickwand-dev
+    - lynis
+    - mplayer
+    - nautilus-dropbox
+    - oping
+    - passwdqc
+    - phatch
+    - pngcrush
+    - python-apt
+    - python-pip
+    - rbenv
+    - rkhunter
+    - ruby
+    - ruby-build
+    - siege
+    - sshpass
+    - terminator
+    - tig
+    - tmux
+    - tree
+    - trimage
+    - unattended-upgrades
+    - unhide
+    - unhide.rb
+    - vim
+    - xclip
+    - zsh
   tags: packages
 
 

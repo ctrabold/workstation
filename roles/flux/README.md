@@ -1,11 +1,11 @@
 # Overview
 
-Installs and configures flux.
+Installs and configures flux alternative on Ubuntu.
 
 
 ## Requirements
 
-none
+Ubuntu
 
 ## Role Variables
 

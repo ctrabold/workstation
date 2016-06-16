@@ -1,11 +1,10 @@
 # Overview
 
-Installs and configures firefox.
-
+Installs and configures firefox on Ubuntu.
 
 ## Requirements
 
-none
+Ubuntu
 
 ## Role Variables
 
