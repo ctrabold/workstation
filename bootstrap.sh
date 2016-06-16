@@ -17,6 +17,18 @@ if [[ $OSTYPE == darwin* ]]; then
   else
     ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
   fi
+
+  if [[ $CI == true ]]; then
+    echo "INFO Running in CI mode. Not installing any packages"
+  else
+    brew tap Homebrew/bundle
+
+    echo "Cleanup 'homebrew'"
+    brew prune && brew cleanup && brew tap --repair
+
+    echo "Cleanup dock"
+    dockutil --remove all
+  fi
 fi
 
 # Installing most important package
