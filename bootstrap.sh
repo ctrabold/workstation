@@ -48,7 +48,7 @@ fi
 
 # Run ansible
 echo "INFO Check ansible playbook"
-ansible-playbook -i ${SOURCE_DIR}/hosts.ini -K ${SOURCE_DIR}/playbook.yml $* --syntax-check
+ansible-playbook -i ${SOURCE_DIR}/hosts.ini -K ${SOURCE_DIR}/playbook.yml "$@" --syntax-check
 
 if [[ $CI == true ]]; then
   echo "INFO Not installing anything on CI environment for now. Exiting with last exit status..."
@@ -56,4 +56,4 @@ if [[ $CI == true ]]; then
 fi
 
 echo "INFO Execute ansible playbook"
-ansible-playbook -i ${SOURCE_DIR}/hosts.ini -K ${SOURCE_DIR}/playbook.yml $*
+ansible-playbook -i ${SOURCE_DIR}/hosts.ini -K ${SOURCE_DIR}/playbook.yml "$@"
