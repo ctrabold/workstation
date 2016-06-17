@@ -1,161 +1,237 @@
-cask_args appdir: '~/Applications'
-
-# Install homebrew taps
-tap 'caskroom/cask'
-tap 'caskroom/fonts'
-tap 'caskroom/versions'
-tap 'homebrew/binary'
-tap 'homebrew/dupes'
-tap 'homebrew/versions'
-tap 'thoughtbot/formulae'
-
-# Install 'homebrew' packages
-brew 'ack'
-brew 'autojump'
-brew 'bats'
-brew 'chkrootkit'
-brew 'chromedriver'
-brew 'cmake'
-brew 'dlite'
-brew 'dockutil'
-brew 'elixir'
-brew 'emacs', args: ['with-cocoa', 'with-gnutls']
-brew 'ffmpeg'
-brew 'gifify'
-brew 'git-extras'
-brew 'git'
-brew 'golang'
-brew 'graphviz'
-brew 'htop-osx'
-brew 'hub'
-brew 'icu4c'
-brew 'imagemagick'
-brew 'ios-webkit-debug-proxy'
-brew 'jenkins-lts'
-brew 'jq'
-brew 'lynis'
-brew 'mas'
-brew 'nodejs'
-brew 'parallel'
-brew 'phantomjs'
-brew 'pkg-config'
-brew 'pwgen'
-brew 'rbenv'
-brew 'rcm'
-brew 'rename'
-brew 'rkhunter'
-brew 'rsync'
-brew 'ruby-install'
-brew 'saltstack'
-brew 'shellcheck'
-brew 'source-highlight'
-brew 'sslyze'
-brew 'tesseract'
-brew 'tidy-html5'
-brew 'tig'
-brew 'tmux-cssh'
-brew 'tmux'
-brew 'tree'
-brew 'vim'
-brew 'wget'
-brew 'zsh'
-
-# Install apps with brew-cask
-cask 'adium'
-cask 'alfred'
-cask 'atom'
-cask 'appcleaner'
-cask 'audacity'
-cask 'caffeine'
-cask 'clipmenu'
-cask 'cord'
-cask 'dash'
-cask 'dropbox'
-cask 'flux'
-cask 'firefox'
-cask 'freemind'
-#  cask 'fuze'
-cask 'gephi'
-cask 'gif-for-mac'
-cask 'google-chrome'
-cask 'google-drive'
-cask 'google-hangouts'
-cask 'google-refine'
-cask 'gpgtools'
-cask 'handbrake'
-cask 'imageoptim'
-cask 'iterm2'
-cask 'java' unless system '/usr/libexec/java_home --failfast'
-cask 'kdiff3'
-cask 'keepassx'
-cask 'launchcontrol'
-cask 'libreoffice'
-cask 'limechat'
-cask 'moom'
-cask 'nvalt'
-cask 'owasp-zap'
-cask 'packer'
-cask 'pandoc'
-cask 'pencil'
-cask 'postico'
-cask 'sequel-pro'
-cask 'sweet-home3d'
-cask 'teamviewer'
-cask 'telegram'
-cask 'the-unarchiver'
-cask 'tunnelblick'
-# cask 'typinator' # This installs the latest version, wee need 5.9
-cask 'vagrant'
-cask 'vlc'
-cask 'virtualbox'
-cask 'vault'
-cask 'xquartz'
-cask 'firefox'
-cask 'telegram'
-cask 'firefox'
-
-# Install quicklook plugins with brew-cask (https://github.com/sindresorhus/quick-look-plugins)
-cask 'betterzipql'
-cask 'qlcolorcode'
-cask 'qlimagesize'
-cask 'qlmarkdown'
-cask 'qlprettypatch'
-cask 'qlstephen'
-cask 'quicklook-csv'
-cask 'quicklook-json'
-cask 'suspicious-package'
-cask 'webpquicklook'
-
-# Install fonts
-cask 'font-inconsolata-dz-for-powerline'
-cask 'font-inconsolata'
-cask 'font-meslo-lg-for-powerline'
-cask 'font-ubuntu'
-
-# Install from App Store
-mas '1Password', id: 443987910
-mas 'Affinity Designer', id: 824171161
-mas 'Affinity Photo', id: 824183456
-mas 'CCMenu', id: 603117688
-mas 'Dash', id: 458034879
-mas 'Day One Classic', id: 422304217
-mas 'GarageBand', id: 682658836
-mas 'Growl', id: 467939042
-mas 'iMovie', id: 408981434
-mas 'Install OS X Yosemite', id: 915041082
-mas 'Integrity', id: 513610341
-mas 'Keynote', id: 409183694
-mas 'Monodraw', id: 920404675
-mas 'Monosnap', id: 540348655
-mas 'Name Mangler', id: 402434720
-mas 'Numbers', id: 409203825
-mas 'OmniOutliner Pro', id: 404647179
-mas 'Pages', id: 409201541
-mas 'Pocket', id: 568494494
-mas 'ScreenFlow', id: 422025166
-mas 'Scrivener', id: 418889511
-mas 'Slack', id: 803453959
-mas 'SomaFM', id: 449155338
-mas 'The Unarchiver', id: 425424353
-mas 'Tweetbot', id: 557168941
-mas 'Xcode', id: 497799835
+tap "caskroom/cask"
+tap "caskroom/fonts"
+tap "caskroom/versions"
+tap "homebrew/binary"
+tap "homebrew/boneyard"
+tap "homebrew/bundle"
+tap "homebrew/core"
+tap "homebrew/devel-only"
+tap "homebrew/dupes"
+tap "homebrew/services"
+tap "homebrew/versions"
+tap "thoughtbot/formulae"
+cask "java"
+cask "xquartz"
+brew "ack"
+brew "aha"
+brew "libyaml"
+brew "gdbm"
+brew "python"
+brew "ansible"
+brew "ansible-cmdb"
+brew "apple-gcc42"
+brew "apr"
+brew "apr-util"
+brew "asio"
+brew "gettext"
+brew "glib"
+brew "freetype"
+brew "fontconfig"
+brew "pixman"
+brew "cairo"
+brew "git"
+brew "pkg-config"
+brew "atk"
+brew "autoconf"
+brew "autojump"
+brew "automake"
+brew "awscli"
+brew "bats"
+brew "bfg"
+brew "cabal-install"
+brew "caddy"
+brew "certbot"
+brew "chkrootkit"
+brew "chromedriver"
+brew "consul"
+brew "consul-template"
+brew "crystal-lang"
+brew "csshx"
+brew "curl"
+brew "dependency-check"
+brew "gnu-tar"
+brew "diffoscope"
+brew "dnsmasq", restart_service: true
+brew "docker-compose"
+brew "dockutil"
+brew "doxygen"
+brew "duti"
+brew "jpeg"
+brew "elixir"
+brew "elm"
+brew "elm-format"
+brew "exercism"
+brew "faac"
+brew "lame"
+brew "xvid"
+brew "ffmpeg"
+brew "flac"
+brew "gd"
+brew "ghostscript"
+brew "git-extras"
+brew "git-standup"
+brew "libusb"
+brew "libusb-compat"
+brew "gnupg"
+brew "lua"
+brew "gnuplot"
+brew "go"
+brew "gperftools"
+brew "gradle"
+brew "graphviz"
+brew "groovy"
+brew "hadolint"
+brew "heroku"
+brew "htop-osx"
+brew "hub"
+brew "hugo"
+brew "jq"
+brew "kpcli"
+brew "lynis"
+brew "lynx"
+brew "mas"
+brew "maven"
+brew "md5sha1sum"
+brew "mercurial"
+brew "mp3splt"
+brew "nikto"
+brew "nmap"
+brew "node"
+brew "sleuthkit"
+brew "pandoc"
+brew "parallel"
+brew "pg_top"
+brew "phantomjs"
+brew "pre-commit"
+brew "pstree"
+brew "pwgen"
+brew "ruby-build"
+brew "rbenv"
+brew "rename"
+brew "rkhunter"
+brew "rsync"
+brew "ruby"
+brew "ruby-install"
+brew "runit"
+brew "shellcheck"
+brew "siege"
+brew "sloccount"
+brew "slowhttptest"
+brew "socat"
+brew "sonar-scanner"
+brew "sonarqube"
+brew "source-highlight"
+brew "ssh-audit"
+brew "sslscan"
+brew "sslyze"
+brew "subversion"
+brew "sysdig"
+brew "tcpflow"
+brew "terraform"
+brew "tesseract"
+brew "tidy-html5"
+brew "tig"
+brew "tmate"
+brew "tmux"
+brew "tmux-cssh"
+brew "tree"
+brew "uncrustify"
+brew "vim"
+brew "watch"
+brew "wget"
+brew "xhyve"
+brew "yarn"
+brew "youtube-dl"
+brew "zsh"
+brew "thoughtbot/formulae/rcm"
+cask "alfred"
+cask "anki"
+cask "appcleaner"
+cask "atom"
+cask "audacity"
+cask "betterzipql"
+cask "caffeine"
+cask "charles"
+cask "docker"
+cask "dropbox"
+cask "firefox"
+cask "flux"
+cask "font-inconsolata"
+cask "font-inconsolata-dz-for-powerline"
+cask "font-meslo-lg-for-powerline"
+cask "font-ubuntu"
+cask "freemind"
+cask "go-agent"
+cask "go-server"
+cask "gogs"
+cask "google-chrome"
+cask "google-drive"
+cask "google-hangouts"
+cask "google-refine"
+cask "gpgtools"
+cask "handbrake"
+cask "imageoptim"
+cask "insomnia"
+cask "iterm2"
+cask "kaleidoscope"
+cask "kdiff3"
+cask "keeweb"
+cask "keycastr"
+cask "launchcontrol"
+cask "libreoffice"
+cask "licecap"
+cask "minikube"
+cask "minishift"
+cask "moom"
+cask "mosh"
+cask "mou"
+cask "mousepose"
+cask "nvalt"
+cask "owasp-zap"
+cask "packer"
+cask "pandoc"
+cask "postico"
+cask "provisionql"
+cask "puppet"
+cask "qlcolorcode"
+cask "qlimagesize"
+cask "qlmarkdown"
+cask "qlprettypatch"
+cask "qlstephen"
+cask "qlvideo"
+cask "quicklook-csv"
+cask "quicklook-json"
+cask "screenflow"
+cask "sequel-pro"
+cask "skype"
+cask "suspicious-package"
+cask "the-unarchiver"
+cask "thunderbird"
+cask "typinator"
+cask "vagrant"
+cask "vault"
+cask "virtualbox"
+cask "vlc"
+cask "webpquicklook"
+cask "witch"
+mas "1Password", id: 443987910
+mas "Affinity Designer", id: 824171161
+mas "Affinity Photo", id: 824183456
+mas "CCMenu", id: 603117688
+mas "Dash", id: 458034879
+mas "Day One Classic", id: 422304217
+mas "Delicious Library 3", id: 635124250
+mas "Growl", id: 467939042
+mas "Integrity", id: 513610341
+mas "iThoughtsX", id: 720669838
+mas "LINE", id: 539883307
+mas "Monodraw", id: 920404675
+mas "Monosnap", id: 540348655
+mas "Name Mangler", id: 402434720
+mas "OmniOutliner Pro", id: 404647179
+mas "Scrivener", id: 418889511
+mas "SomaFM", id: 449155338
+mas "Telegram Desktop", id: 946399090
+mas "The Unarchiver", id: 425424353
+mas "Tweetbot", id: 557168941
+mas "Xcode", id: 497799835
