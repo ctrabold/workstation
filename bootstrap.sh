@@ -23,6 +23,9 @@ if [[ $OSTYPE == darwin* ]]; then
   else
     brew tap Homebrew/bundle
 
+    echo "INFO Processing Brewfile..."
+    brew bundle
+
     echo "Cleanup 'homebrew'"
     brew prune && brew cleanup && brew tap --repair
 
