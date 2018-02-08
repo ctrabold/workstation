@@ -114,7 +114,7 @@ brew "sloccount"
 brew "slowhttptest"
 brew "socat"
 brew "sonar-scanner"
-brew "sonarqube"
+#brew "sonarqube"
 brew "source-highlight"
 brew "ssh-audit"
 brew "sslscan"
@@ -143,7 +143,6 @@ cask "alfred"
 cask "anki"
 cask "appcleaner"
 cask "atom"
-cask "audacity"
 cask "betterzipql"
 cask "caffeine"
 cask "charles"
@@ -153,16 +152,16 @@ cask "firefox"
 cask "flux"
 cask "font-inconsolata"
 cask "font-inconsolata-dz-for-powerline"
-cask "font-meslo-lg-for-powerline"
+cask "font-meslo-for-powerline"
 cask "font-ubuntu"
 cask "freemind"
 cask "go-agent"
 cask "go-server"
 cask "gogs"
 cask "google-chrome"
-cask "google-drive"
+#cask "google-drive"
 cask "google-hangouts"
-cask "google-refine"
+#cask "google-refine"
 cask "gpgtools"
 cask "handbrake"
 cask "imageoptim"
@@ -175,19 +174,17 @@ cask "keycastr"
 cask "launchcontrol"
 cask "libreoffice"
 cask "licecap"
-cask "minikube"
+#cask "minikube"
 cask "minishift"
-cask "moom"
-cask "mosh"
-cask "mou"
+#cask "mosh"
 cask "mousepose"
+cask "numi"
 cask "nvalt"
-cask "owasp-zap"
+#cask "owasp-zap"
 cask "packer"
-cask "pandoc"
-cask "postico"
+#cask "pandoc"
+#cask "postico"
 cask "provisionql"
-cask "puppet"
 cask "qlcolorcode"
 cask "qlimagesize"
 cask "qlmarkdown"
@@ -197,36 +194,37 @@ cask "qlvideo"
 cask "quicklook-csv"
 cask "quicklook-json"
 cask "screenflow"
-cask "sequel-pro"
-cask "skype"
+#cask "sequel-pro"
 cask "suspicious-package"
+cask "spectacle"
 cask "the-unarchiver"
 cask "thunderbird"
 cask "typinator"
 cask "vagrant"
-cask "vault"
+#cask "vault"
 cask "virtualbox"
 cask "vlc"
 cask "webpquicklook"
 cask "witch"
-mas "1Password", id: 443987910
-mas "Affinity Designer", id: 824171161
-mas "Affinity Photo", id: 824183456
-mas "CCMenu", id: 603117688
-mas "Dash", id: 458034879
-mas "Day One Classic", id: 422304217
-mas "Delicious Library 3", id: 635124250
-mas "Growl", id: 467939042
-mas "Integrity", id: 513610341
-mas "iThoughtsX", id: 720669838
-mas "LINE", id: 539883307
-mas "Monodraw", id: 920404675
-mas "Monosnap", id: 540348655
-mas "Name Mangler", id: 402434720
-mas "OmniOutliner Pro", id: 404647179
-mas "Scrivener", id: 418889511
-mas "SomaFM", id: 449155338
-mas "Telegram Desktop", id: 946399090
-mas "The Unarchiver", id: 425424353
-mas "Tweetbot", id: 557168941
-mas "Xcode", id: 497799835
+# mas "1Password", id: 443987910
+# mas "Affinity Designer", id: 824171161
+# mas "Affinity Photo", id: 824183456
+# mas "CCMenu", id: 603117688
+# mas "Dash", id: 458034879
+# mas "Day One Classic", id: 422304217
+# mas "Delicious Library 3", id: 635124250
+# mas "Growl", id: 467939042
+# mas "Integrity", id: 513610341
+# mas "iThoughtsX", id: 720669838
+# mas "LINE", id: 539883307
+# mas "Monodraw", id: 920404675
+# mas "Monosnap", id: 540348655
+# mas "Moon", id: 419330170
+# mas "Name Mangler", id: 402434720
+# mas "OmniOutliner Pro", id: 404647179
+# mas "Scrivener", id: 418889511
+# mas "SomaFM", id: 449155338
+# mas "Telegram Desktop", id: 946399090
+# mas "The Unarchiver", id: 425424353
+# mas "Tweetbot", id: 557168941
+# mas "Xcode", id: 497799835
