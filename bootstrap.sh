@@ -28,7 +28,7 @@ if [[ $OSTYPE == darwin* ]]; then
 
     echo "Cleanup 'homebrew'"
     brew prune && brew cleanup && brew tap --repair
-
+    brew install dockutil
     echo "Cleanup dock"
     dockutil --remove all
   fi
