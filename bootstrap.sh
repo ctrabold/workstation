@@ -11,6 +11,13 @@ else
   echo "Please install python first."
 fi
 
+if [[ `which pip` ]]; then
+  echo "OK Found python-pip!"
+else
+  echo "INFO Installing python pip (https://en.wikipedia.org/wiki/Pip_(package_manager))"
+  sudo easy_install pip
+fi
+
 if [[ $OSTYPE == darwin* ]]; then
   if [[ `which brew` ]]; then
     echo "OK Found homebrew!"
