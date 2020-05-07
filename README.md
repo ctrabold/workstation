@@ -9,7 +9,7 @@ Use at your own risk. Hope you find it useful too.
 # Installation
 
     mkdir -p ~/bin/
-    git clone git@github.com:ctrabold/workstation.git ~/bin/setup
+    git clone https://github.com/ctrabold/workstation.git ~/bin/setup
 
     ~/bin/setup/bootstrap.sh
 
