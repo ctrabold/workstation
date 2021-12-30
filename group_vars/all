@@ -1,9 +1,0 @@
-dotfiles_dir: "{{ ansible_env.HOME }}/dotfiles"
-email: info@christian-trabold.de
-github_username: ctrabold
-home_dir: "{{ ansible_env.HOME }}"
-name: Christian Trabold
-ssh_private_key_name: id_rsa
-user_group: staff
-username: "{{ ansible_env.USER }}"
-zsh_path: /usr/local/bin/zsh
