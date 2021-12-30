@@ -1,14 +1,3 @@
 ---
-- name: Create workspace directory
-  file: path={{ home_dir }}/workspace
-        owner={{ username }}
-        state=directory
-  with_items:
-    - workspace
-
 - include: "ubuntu.yml"
   when: ansible_os_family == "Ubuntu"
-
-- include: zsh.yml
-- include: vim.yml
-- include: dotfiles.yml
