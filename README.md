@@ -1,10 +1,12 @@
 # Overview
 
-I use this repo to document my experience with [Ansible](http://www.ansible.com/) and tools I find useful.
+*This repository is DEPRECATED, no longer supported and utterly outdated.*
 
-Use at your own risk. Hope you find it useful too.
+I used this repo to document my experience with [Ansible](http://www.ansible.com/) and tools I find useful e.g. to setup my workstation and laptops.
 
-[![Build Status](https://travis-ci.org/ctrabold/workstation.svg?branch=master)](https://travis-ci.org/ctrabold/workstation)
+I recommend to have a look at [my dotfiles repo](https://github.com/ctrabold/dotfiles) which supersede this repo in a more lightweight manner.
+
+Thanks for stepping by!
 
 # Installation
 
